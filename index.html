@@ -441,7 +441,12 @@
         <h2 id="final-h" data-reveal data-reveal-delay="80" style="font-weight:800; letter-spacing:-0.02em; line-height:1.06; font-size:clamp(34px,6vw,64px); margin:0 0 22px;">Keep your feet.<br />Start today.</h2>
         <p data-reveal data-reveal-delay="150" style="font-size:clamp(17px,2.2vw,20px); color:#5C4A38; max-width:52ch; margin:0 auto 32px; line-height:1.55;">One photo is all it takes to begin. We'll walk you through the rest.</p>
         <div data-reveal data-reveal-delay="220">
-          <a href="mailto:build@opendiabetic.com" style="display:inline-block; background:var(--cocoa); color:var(--paper); text-decoration:none; font-weight:700; font-size:17px; padding:16px 32px; border-radius:10px; transition:background .2s ease, transform .2s ease, box-shadow .2s ease;" data-dchover="background:#1c150e; transform:translateY(-2px); box-shadow:0 18px 38px -18px rgba(28,21,14,0.6);">Start a foot check</a>
+          <form id="od-lead" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; max-width:460px; margin:0 auto;">
+            <label for="od-lead-email" style="position:absolute; left:-9999px;">Your email</label>
+            <input id="od-lead-email" type="email" name="email" required autocomplete="email" placeholder="Your email" style="flex:1 1 220px; min-width:0; padding:15px 18px; border-radius:10px; border:1px solid rgba(43,33,24,0.28); background:var(--paper); color:var(--cocoa); font:inherit; font-size:16px;" />
+            <button type="submit" id="od-lead-btn" style="background:var(--cocoa); color:var(--paper); border:0; font-weight:700; font-size:17px; padding:16px 28px; border-radius:10px; cursor:pointer; white-space:nowrap; transition:background .2s ease, transform .2s ease;" data-dchover="background:#1c150e; transform:translateY(-2px);">Start a foot check</button>
+          </form>
+          <p id="od-lead-msg" role="status" aria-live="polite" style="margin:16px 0 0; min-height:1.2em; font-size:15px; font-weight:600; color:#5C4A38;"></p>
         </div>
       </div>
     </section>
@@ -539,6 +544,30 @@
       var VKEY = 'od-short-vid-t';
       vid.addEventListener('loadedmetadata', function(){ try { var s = parseFloat(localStorage.getItem(VKEY)||'0'); if (s>0 && vid.duration && s < vid.duration-0.5) vid.currentTime = s; } catch(e){} });
       vid.addEventListener('timeupdate', function(){ try { localStorage.setItem(VKEY, String(vid.currentTime)); } catch(e){} });
+    }
+  } catch(e){}
+
+  // "Start a foot check" — email capture -> /api/foot-check (Resend)
+  try {
+    var form = document.getElementById('od-lead');
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var btn = document.getElementById('od-lead-btn');
+        var msg = document.getElementById('od-lead-msg');
+        var email = (form.email && form.email.value || '').trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { if(msg) msg.textContent = 'Please enter a valid email.'; return; }
+        var orig = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+        if (msg) msg.textContent = '';
+        fetch('/api/foot-check', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ email: email }) })
+          .then(function(r){ return r.json().catch(function(){ return { ok:false }; }); })
+          .then(function(d){
+            if (d && d.ok) { form.style.display = 'none'; if(msg) msg.textContent = "Thank you — we'll be in touch. Keep your feet. 🦶"; }
+            else { if(btn){ btn.disabled=false; btn.textContent=orig; } if(msg) msg.textContent = 'Something went wrong — email build@opendiabetic.com and we’ll help.'; }
+          })
+          .catch(function(){ if(btn){ btn.disabled=false; btn.textContent=orig; } if(msg) msg.textContent = 'Something went wrong — email build@opendiabetic.com and we’ll help.'; });
+      });
     }
   } catch(e){}
 })();
