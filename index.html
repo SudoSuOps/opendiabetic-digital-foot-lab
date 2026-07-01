@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://opendiabetic.com/#org","name":"OpenDiabetic","alternateName":"OpenDiabetic — The Digital Foot Lab","url":"https://opendiabetic.com/","description":"A digital foot lab that helps people with diabetes catch foot problems early — at home, in their hands, confirmed by their care team.","email":"build@opendiabetic.com","telephone":"+1-561-532-7120","address":{"@type":"PostalAddress","addressLocality":"Jupiter","addressRegion":"FL","addressCountry":"US"},"sameAs":["https://x.com/opendiabetics","https://github.com/SudoSuOps","https://swarmandbee.com"]},
+{"@type":"Organization","@id":"https://opendiabetic.com/#org","name":"OpenDiabetic","alternateName":"OpenDiabetic — The Digital Foot Lab","url":"https://opendiabetic.com/","description":"A digital foot lab that helps people with diabetes catch foot problems early — at home, in their hands, confirmed by their care team.","email":"build@opendiabetic.com","telephone":"+1-561-532-7120","address":{"@type":"PostalAddress","addressLocality":"Jupiter","addressRegion":"FL","addressCountry":"US"},"sameAs":["https://x.com/opendiabetics","https://github.com/SudoSuOps","https://swarmandbee.com"],"founder":{"@id":"https://opendiabetic.com/#donovan"}},
 {"@type":"WebSite","@id":"https://opendiabetic.com/#website","url":"https://opendiabetic.com/","name":"OpenDiabetic — The Digital Foot Lab","publisher":{"@id":"https://opendiabetic.com/#org"},"inLanguage":"en-US"},
 {"@type":"MedicalWebPage","@id":"https://opendiabetic.com/#webpage","url":"https://opendiabetic.com/","name":"OpenDiabetic — helping people keep their feet","isPartOf":{"@id":"https://opendiabetic.com/#website"},"about":{"@type":"MedicalCondition","name":"Diabetic foot ulcer"},"audience":{"@type":"MedicalAudience","audienceType":"Patient"},"description":"How OpenDiabetic helps people with diabetes prevent foot complications through daily monitoring, personalized offloading, made-to-fit inserts, and clinician-guided care. Educational monitoring — it never diagnoses."},
 {"@type":"FAQPage","@id":"https://opendiabetic.com/#faq","mainEntity":[
@@ -31,7 +31,8 @@
 {"@type":"Question","name":"Is OpenDiabetic for Type 1 or Type 2 diabetes?","acceptedAnswer":{"@type":"Answer","text":"Both. Type 1 is autoimmune and Type 2 is insulin resistance, but both damage the nerves and circulation in the feet — and after a foot ulcer, Type 1 is not spared. (Diabetes Care, 2022)"}},
 {"@type":"Question","name":"Does OpenDiabetic diagnose or replace my doctor?","acceptedAnswer":{"@type":"Answer","text":"No. It never diagnoses. It helps you monitor your feet and organize what to show your care team, and a real clinician confirms anything uncertain."}},
 {"@type":"Question","name":"What does OpenDiabetic, the digital foot lab, actually do?","acceptedAnswer":{"@type":"Answer","text":"It is a digital foot lab: daily foot monitoring, AI-assisted review, a clinician in the loop, personalized offloading, made-to-fit inserts on demand, and continuous foot-health tracking over time."}}
-]}
+]},
+{"@type":"Person","@id":"https://opendiabetic.com/#donovan","name":"Donovan","description":"Type 1 diabetic and amputee; the person behind OpenDiabetic — building the daily foot-care prevention he did not have so others can keep their feet.","knowsAbout":["diabetic foot care","diabetic foot ulcer prevention","Type 1 diabetes"]}
 ]}
 </script>
 <style>
@@ -429,6 +430,28 @@
             <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Podiatry and primary-care teams who want eyes on feet between visits — with a clear record and their clinician kept in the loop.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ THE WHY / MY STORY ============ -->
+    <section id="story" aria-labelledby="story-h" style="background:var(--ink-900); color:var(--ink-50); border-top:1px solid var(--line);">
+      <div style="max-width:760px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;" data-reveal>
+        <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey); margin:0 0 20px;">The Why</p>
+        <h2 id="story-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.16; font-size:clamp(25px,3.9vw,40px); margin:0 0 10px;">
+          I'm not writing this as a founder. I'm writing this as a <span style="color:var(--honey);">Type 1 diabetic amputee.</span>
+        </h2>
+        <p style="font-weight:800; font-size:clamp(20px,3vw,28px); color:var(--honey); margin:0 0 30px; letter-spacing:-0.01em;">I know the pain.</p>
+        <div style="font-size:clamp(16px,1.9vw,19px); line-height:1.72; color:#B7C2CE; display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0;">Type 1 is autoimmune — my own body turned on itself. You learn to live with the numbers. But the thing that took the most from me wasn't the blood sugar. <strong style="color:var(--ink-50); font-weight:700;">It was my feet.</strong></p>
+          <p style="margin:0;">For a long time, I thought I had my foot care handled. <strong style="color:var(--ink-50); font-weight:700;">I didn't.</strong> I wasn't checking every day — my prevention wasn't a daily habit, it was a <em>someday</em> habit. And by the time I really looked, an ulcer was already underway. That was the missing piece. Not knowledge. Not effort. <strong style="color:var(--ink-50); font-weight:700;">Consistency — every single day.</strong></p>
+          <p style="margin:0; color:var(--ink-50); font-weight:600;">I lost part of myself to it. But what I lost became my silver lining — the gift that brought me here. I own it. I embrace it. And I built it into this, so you can keep what I lost. That's the win. And I intend to win big.</p>
+          <p style="margin:0;">Here's the truth nobody says loud enough: <strong style="color:var(--honey); font-weight:700;">it's not the diabetes that kills you — it's the infection.</strong> A small change you can't feel becomes something you can't undo. You don't catch it by waiting until it hurts, or until it's ulcer-management time in the doctor's office. You catch it by looking <strong style="color:var(--ink-50); font-weight:700;">today. And tomorrow. And the day after.</strong></p>
+          <p style="margin:0;">So I built what I needed — and what I didn't have: a lab that makes the daily check actually happen. Check today, every day. See what changed. Keep your care team in the loop <em>before</em> it's an emergency. Proactive, not reactive.</p>
+          <p style="margin:0;">If my feet are in good health, the rest of me falls into place — and the only way to keep them that way is <strong style="color:var(--honey); font-weight:700;">every day, not someday.</strong></p>
+          <p style="margin:0;">I'm a husband. A father of four. A builder. I'm doing this for the people living what I live — so they can <strong style="color:var(--ink-50); font-weight:700;">keep what I lost.</strong> And so my kids will always know their dad built something that mattered. <strong style="color:var(--ink-50); font-weight:700;">This is my legacy.</strong></p>
+        </div>
+        <p style="font-size:clamp(18px,2.4vw,23px); font-weight:800; color:var(--honey); margin:34px 0 0; letter-spacing:-0.01em; line-height:1.2;">Helping people keep their feet. Every day, not someday.</p>
+        <p style="font-family:var(--mono); font-size:15px; color:var(--ink-50); margin:22px 0 0;">— Donovan</p>
       </div>
     </section>
 
