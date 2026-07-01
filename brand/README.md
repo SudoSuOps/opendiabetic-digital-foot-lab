@@ -1,7 +1,12 @@
-# Handoff: OpenDiabetic — Brand Asset Kit
+# Handoff: OpenDiabetic — Brand Kit, Landing Page & Motion
 
 ## Overview
-The complete brand asset kit for **OpenDiabetic — The Digital Foot Lab** (a sub-brand: *"Part of the Swarm & Bee family"*). Covers the logo system and export-ready social/media/video templates for **X (Twitter)**, **YouTube**, and **Facebook**, plus a **profile avatar**, an **email/newsletter header**, **square + vertical post templates**, and **animated video pieces** (16:9 & 9:16 intro/outro stings + an animated lower-third). All artboards share one calm, warm identity: honey + paper + ink.
+The complete OpenDiabetic package for **The Digital Foot Lab** (a sub-brand: *"Part of the Swarm & Bee family"*). Three deliverables, one identity (honey + paper + ink, calm and warm):
+1. **Marketing landing page** — `OpenDiabetic Landing.dc.html`. Full build notes in **`LANDING_PAGE.md`**.
+2. **Brand asset kit** — logo system + export-ready social/media templates for **X (Twitter)**, **YouTube**, and **Facebook**, a **profile avatar**, an **email/newsletter header**, and **square + vertical post templates**. Notes below.
+3. **Motion** — **animated video pieces** (16:9 & 9:16 intro/outro stings + an animated lower-third), directly exportable. See the Motion section.
+
+Start with `LANDING_PAGE.md` for the page, then this file for the mark, tokens, artboards, and motion (all shared).
 
 ## About the design files
 - `OpenDiabetic Brand Kit.dc.html` — a **pan/zoom canvas of design references created in HTML**. Every artboard is a real, fixed-pixel element so it can be exported at its exact size. It uses a small proprietary streaming-template runtime (`<x-dc>`, `support.js`); **ignore that scaffolding** when porting.
@@ -78,8 +83,22 @@ All motion is **calm** — no bounce, no spring. Easing `cubic-bezier(0.2, 0.8, 
 
 **Reduced motion:** everything must respect `prefers-reduced-motion: reduce` — show the final resting frame, no animation. (The HTML already does.)
 
+## Motion — playable & exportable (`motion/`)
+The three motion pieces are built on a real timeline engine (`motion/animations.jsx`) and are **directly exportable to video** — no rebuild required. Open any of the three `.dc.html` files in the browser: you get play/pause, a scrubber (drag, ←/→, space, 0-reset), and an **Export** button. Export via the app's **Share → Export → Video** (or the player's download icon) to produce the actual file.
+
+| File | Size | Duration | Notes |
+|---|---|---|---|
+| `OpenDiabetic Sting 16x9.dc.html` | 1920×1080 | 5s | Intro/outro sting — mark reveal → wordmark → tagline, honey glow breathing. Loops. |
+| `OpenDiabetic Sting 9x16.dc.html` | 1080×1920 | 5s | Vertical sting — same beats, headline "Keep your feet." for Reels/TikTok/Shorts. |
+| `OpenDiabetic Lower Third.dc.html` | 1920×1080 | 6s | Animated lower-third overlay. **Stage background is transparent** — the on-screen "sample video frame" is preview-only context and is NOT part of the export, so the exported clip is a clean overlay. |
+| `OpenDiabetic Short.dc.html` | 1080×1920 | 52s | Manifesto short (9:16): mission → the reactive-past turn → "every day" → what it is → daily how-to → brand close. Calm, typographic; the reactive list is deliberately muted (no fear imagery / no red). Export MP4 (H.264) for Shorts/Reels/TikTok. |
+
+**Formats:** the Export dialog offers the format — pick **MP4 (H.264)** for the stings, and for the lower-third choose a format that **preserves alpha** (WebM/VP9 with alpha, or convert to ProRes 4444 / with an alpha channel) so it composites over footage. GIF is available too for the stings if you need a lightweight loop. If your export path can't hold alpha, key the lower-third against the (solid-color) sample frame instead.
+- **Editing the timelines:** each scene lives in a sibling `.jsx` (`StingWide.jsx`, `StingVert.jsx`, `LowerThird.jsx`) — copy, colors, sizes, and keyframe times are plain values there (`interpolate([t…],[v…], Easing.…)`). The motion spec below documents the exact beats.
+- **Porting to another tool** (After Effects / Lottie): rebuild the timelines from the spec below; they're deliberately simple (fade/scale/slide, ease-out).
+
 ## State management
-None — static compositions + looping CSS animation. No data, no app logic.
+None — static compositions + timeline-driven animation. No data, no app logic.
 
 ---
 
@@ -111,12 +130,16 @@ Supporting text tints used: `#B7C2CE` / `#8DA0AE` (on ink), `#4A3D30` / `#9a8570
 - `assets/opendiabetic-mark.svg` — the foot mark (currentColor). Recolor via CSS `color`, or set `fill`. This is the single source of truth for the mark across every asset.
 - **Fonts:** Figtree + JetBrains Mono via Google Fonts (substitutes — swap when licensed).
 - No raster images or icon libraries; the mark is the only graphic. Emoji are **not** used anywhere in this kit (the 🦶/🐝 emoji from earlier drafts are replaced by the real mark; 🐝 "Swarm & Bee family" remains a text line only).
-- **Export note:** static frames → PNG/SVG per artboard at its labeled size. Stings/lower-third → rebuild the timeline above in a motion tool (or screen-record the looping HTML) and export MP4 (H.264) + a transparent WebM/ProRes for the lower-third overlay.
+- **Export note:** static frames → PNG/SVG per artboard at its labeled size. Motion pieces → open the files in `motion/` and export directly (Share → Export → Video); see the Motion section for per-file format guidance (MP4 for stings, alpha WebM/ProRes for the lower-third).
 
 ## Files
-- `OpenDiabetic Brand Kit.dc.html` — all 15 artboards (design reference).
-- `assets/opendiabetic-mark.svg` — production mark.
-- `OpenDiabetic Landing.dc.html` — landing page, brand-in-context reference.
+- `LANDING_PAGE.md` — full implementation notes for the marketing landing page.
+- `OpenDiabetic Landing.dc.html` — the reworked marketing landing page (real mark + motion). Primary deliverable.
+- `OpenDiabetic Brand Kit.dc.html` — all 15 static artboards (design reference).
+- `assets/opendiabetic-mark.svg` — production mark (the single source of truth, used across all three deliverables).
+- `motion/` — the four exportable video pieces (two stings, a lower-third, and the 52s manifesto short) + `animations.jsx` (timeline engine), the scene `.jsx` files, and `support.js`. Open the `.dc.html` files to play/export.
+- `support.js` — runtime for the root `.dc.html` references (keep alongside them).
+- `README.md` — this file (mark, tokens, artboards, motion, guardrails).
 
 ## Guardrails (apply to every asset — do not break)
 Calm & warm · privacy-first · **no fear or wound imagery** · **no panic-red** (red = status dots only) · **never claims to cure, diagnose, or replace a doctor** ("Never a diagnosis" / "It never diagnoses" is the standing line) · footer/credit line: *🐝 Part of the Swarm & Bee family*.

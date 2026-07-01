@@ -41,29 +41,39 @@
     html{scroll-behavior:auto;}
     *{animation:none !important; transition:none !important;}
   }
-  @keyframes od-glow{ from{opacity:.75; transform:translateY(0);} to{opacity:1; transform:translateY(14px);} }
+  @keyframes od-breathe{ 0%,100%{opacity:.55; transform:scale(1);} 50%{opacity:1; transform:scale(1.07);} }
+  @keyframes od-spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+  @keyframes od-markin{ 0%{opacity:0; transform:scale(.6);} 100%{opacity:1; transform:scale(1);} }
+  @keyframes od-rise{ 0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);} }
+  @keyframes od-dot{ 0%,100%{box-shadow:0 0 0 0 rgba(47,182,122,.55);} 70%{box-shadow:0 0 0 6px rgba(47,182,122,0);} }
+  @keyframes od-node{ 0%,14%,100%{border-color:var(--line); box-shadow:0 0 0 0 rgba(242,180,65,0);} 5%{border-color:var(--honey); box-shadow:0 0 0 1px rgba(242,180,65,.85), 0 16px 36px -12px rgba(242,180,65,.55);} }
+  @keyframes od-float{ 0%,100%{transform:translate(-50%,-50%) scale(1);} 50%{transform:translate(-50%,-50%) scale(1.05);} }
+  @keyframes od-bob{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-7px);} }
+  @keyframes od-mpulse{ 0%{transform:scale(.86);} 16%{transform:scale(1.04);} 34%,100%{transform:scale(1);} }
   ::selection{background:rgba(242,180,65,0.35); color:var(--cocoa);}
 </style>
 </helmet>
 
 <div style="font-family:var(--sans); color:var(--ink-50); background:var(--ink-900); -webkit-font-smoothing:antialiased; line-height:1.55; overflow-x:hidden;">
 
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><symbol id="ftmark" viewBox="0 0 120 150"><path d="M42,58 C38,44 40,34 52,32 C66,30 82,36 84,54 C86,68 80,80 74,92 C69,102 71,112 68,124 C65,138 54,142 45,138 C36,134 33,124 35,112 C37,102 44,96 44,86 C44,76 46,70 42,58 Z"/><ellipse cx="46" cy="22" rx="9" ry="11"/><ellipse cx="62" cy="16" rx="7.5" ry="9.5"/><ellipse cx="75" cy="19" rx="6.5" ry="8"/><ellipse cx="86" cy="26" rx="5.5" ry="7"/><ellipse cx="95" cy="35" rx="5" ry="6"/></symbol></svg>
+
   <a href="#hero" style="position:absolute; left:-9999px; top:0; background:var(--honey); color:var(--cocoa); padding:10px 16px; border-radius:10px; font-weight:700; z-index:200;" style-focus="left:12px; top:12px;">Skip to content</a>
 
   <!-- ============ NAV ============ -->
-  <header style="position:sticky; top:0; z-index:100; background:rgba(11,15,20,0.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+  <header id="siteheader" style="position:sticky; top:0; z-index:100; background:rgba(11,15,20,0.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); transition:box-shadow .3s ease, border-color .3s ease;">
     <nav aria-label="Primary" style="max-width:1200px; margin:0 auto; padding:14px 22px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-      <a href="#hero" style="display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--ink-50); font-weight:800; font-size:20px; letter-spacing:-0.02em; margin-right:auto;">
-        <span style="font-size:22px; line-height:1;" role="img" aria-label="foot">🦶</span>
+      <a href="#hero" style="display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink-50); font-weight:800; font-size:20px; letter-spacing:-0.02em; margin-right:auto;">
+        <svg viewBox="0 0 120 150" width="19" height="24" fill="currentColor" style="color:var(--honey); flex:none;" aria-label="OpenDiabetic foot mark" role="img"><use href="#ftmark"></use></svg>
         <span>OpenDiabetic</span>
       </a>
       <ul style="list-style:none; display:flex; gap:26px; margin:0; padding:0; align-items:center; flex-wrap:wrap; font-size:15px;">
-        <li><a href="#loop" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;" style-hover="opacity:1;">The Lab</a></li>
-        <li><a href="#how" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;" style-hover="opacity:1;">How it works</a></li>
-        <li><a href="#who" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;" style-hover="opacity:1;">For clinicians</a></li>
-        <li><a href="#footer" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;" style-hover="opacity:1;">Contact</a></li>
+        <li><a href="#loop" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" style-hover="opacity:1;">The Lab</a></li>
+        <li><a href="#how" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" style-hover="opacity:1;">How it works</a></li>
+        <li><a href="#who" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" style-hover="opacity:1;">For clinicians</a></li>
+        <li><a href="#footer" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" style-hover="opacity:1;">Contact</a></li>
       </ul>
-      <a href="#final" style="background:var(--honey); color:var(--cocoa); text-decoration:none; font-weight:700; font-size:15px; padding:11px 18px; border-radius:10px; white-space:nowrap;" style-hover="background:var(--honey-deep);">Start a foot check</a>
+      <a href="#final" style="background:var(--honey); color:var(--cocoa); text-decoration:none; font-weight:700; font-size:15px; padding:11px 18px; border-radius:10px; white-space:nowrap; transition:background .2s ease, transform .2s ease, box-shadow .2s ease;" style-hover="background:var(--honey-deep); transform:translateY(-2px); box-shadow:0 12px 26px -12px rgba(242,180,65,0.7);">Start a foot check</a>
     </nav>
   </header>
 
@@ -71,10 +81,13 @@
     <!-- ============ HERO ============ -->
     <section aria-labelledby="hero-h1" style="position:relative; background:var(--ink-900); overflow:hidden;">
       <div style="{{ glowStyle }}"></div>
-      <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(72px,11vw,140px) 22px clamp(64px,9vw,120px); text-align:center;">
-        <div style="display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:13px; color:var(--honey); border:1px solid var(--line); background:var(--ink-l1); padding:7px 14px; border-radius:999px; margin-bottom:26px;">
-          <span style="width:8px; height:8px; border-radius:50%; background:var(--green); display:inline-block;"></span>
-          The Digital Foot Lab
+      <div style="position:relative; z-index:1; max-width:920px; margin:0 auto; padding:clamp(64px,10vw,132px) 22px clamp(64px,9vw,120px); text-align:center;">
+        <div style="display:inline-block; animation:od-bob 5.5s ease-in-out infinite;">
+          <svg viewBox="0 0 120 150" fill="currentColor" style="width:clamp(66px,9vw,108px); height:auto; color:var(--honey);" aria-hidden="true"><use href="#ftmark"></use></svg>
+        </div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:13px; letter-spacing:0.06em; color:var(--honey); margin:22px 0 20px;">
+          <span style="width:8px; height:8px; border-radius:50%; background:var(--green); display:inline-block; animation:od-dot 2.6s ease-out infinite;"></span>
+          THE DIGITAL FOOT LAB
         </div>
         <h1 id="hero-h1" style="font-weight:800; letter-spacing:-0.03em; line-height:1.02; font-size:clamp(44px,8vw,88px); margin:0 0 22px;">
           Helping people keep<br />their <span style="color:var(--honey);">feet</span>.
@@ -83,8 +96,13 @@
           Every year, diabetes takes feet it never had to. We built a lab that catches the problem while it's still small — at home, in your hands, with your care team.
         </p>
         <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <a href="#final" style="background:var(--honey); color:var(--cocoa); text-decoration:none; font-weight:700; font-size:16px; padding:15px 26px; border-radius:10px;" style-hover="background:var(--honey-deep);">Start with a foot check</a>
-          <a href="#loop" style="background:transparent; color:var(--ink-50); text-decoration:none; font-weight:600; font-size:16px; padding:15px 26px; border-radius:10px; border:1px solid var(--line);" style-hover="border-color:var(--honey); color:var(--honey);">See how the Lab works</a>
+          <a href="#final" style="background:var(--honey); color:var(--cocoa); text-decoration:none; font-weight:700; font-size:16px; padding:15px 26px; border-radius:10px; transition:background .2s ease, transform .2s ease, box-shadow .2s ease;" style-hover="background:var(--honey-deep); transform:translateY(-2px); box-shadow:0 16px 34px -14px rgba(242,180,65,0.7);">Start with a foot check</a>
+          <a href="#loop" style="background:transparent; color:var(--ink-50); text-decoration:none; font-weight:600; font-size:16px; padding:15px 26px; border-radius:10px; border:1px solid var(--line); transition:border-color .2s ease, color .2s ease, transform .2s ease;" style-hover="border-color:var(--honey); color:var(--honey); transform:translateY(-2px);">See how the Lab works</a>
+        </div>
+        <div style="display:flex; gap:20px 26px; justify-content:center; flex-wrap:wrap; margin-top:32px; font-family:var(--mono); font-size:12.5px; color:#7E8B99;">
+          <span style="display:inline-flex; align-items:center; gap:8px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--green);"></span>Private by default</span>
+          <span style="display:inline-flex; align-items:center; gap:8px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--blue);"></span>It never diagnoses</span>
+          <span style="display:inline-flex; align-items:center; gap:8px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--green);"></span>Your data stays home</span>
         </div>
       </div>
     </section>
@@ -92,30 +110,121 @@
     <!-- ============ THE STAKES ============ -->
     <section aria-labelledby="stakes-h" style="background:var(--paper); color:var(--cocoa);">
       <div style="max-width:840px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
-        <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 18px;">Why it matters</p>
-        <h2 id="stakes-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0 0 26px; max-width:20ch;">
+        <p data-reveal style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 18px;">Why it matters</p>
+        <h2 id="stakes-h" data-reveal data-reveal-delay="80" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0 0 26px; max-width:20ch;">
           When you can't feel it, a small thing becomes a <span style="color:var(--honey-deep);">serious</span> thing.
         </h2>
-        <div style="font-size:clamp(17px,2vw,20px); line-height:1.65; color:#4A3D30; display:flex; flex-direction:column; gap:18px; max-width:64ch;">
-          <p style="margin:0;">Diabetic neuropathy dulls the nerves in the feet, so a blister, a rub, or a pressure sore can develop without any pain to warn you <span style="color:#9a8570;">[cite]</span>.</p>
-          <p style="margin:0;">Most diabetes-related amputations begin as a foot ulcer — one that, caught earlier, could often have been treated before it turned dangerous <span style="color:#9a8570;">[cite]</span>.</p>
+        <div data-reveal data-reveal-delay="160" style="font-size:clamp(17px,2vw,20px); line-height:1.65; color:#4A3D30; display:flex; flex-direction:column; gap:18px; max-width:64ch;">
+          <p style="margin:0;">Diabetic nerve damage can dull the feeling in your feet. A cut, blister, sore, or pressure spot can form with little or no pain to warn you.<span style="display:block; font-family:var(--mono); font-size:0.58em; color:#9a8570; letter-spacing:0.03em; margin-top:7px;">— NIDDK · NIH</span></p>
+          <p style="margin:0;">Foot ulcers are one of the major pathways to diabetes-related lower-extremity amputation — and when caught early, many foot problems are treatable before they become a crisis.<span style="display:block; font-family:var(--mono); font-size:0.58em; color:#9a8570; letter-spacing:0.03em; margin-top:7px;">— Diabetes Care, 2023</span></p>
           <p style="margin:0;">A daily look is the simplest thing that changes the outcome. The trouble is remembering to look, and knowing what you're looking at.</p>
         </div>
+
+        <div data-reveal data-reveal-delay="240" style="margin-top:clamp(40px,6vw,60px);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+            <span style="width:9px; height:9px; border-radius:50%; background:var(--green); flex:none;"></span>
+            <span style="font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9a8570;">High risk is real math · every figure fact-checked</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+            <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:22px;">
+              <div style="font-weight:800; font-size:34px; letter-spacing:-0.02em; color:var(--honey-deep);">Up to 1 in 2</div>
+              <div style="font-size:15px; color:#4A3D30; margin:8px 0 12px; line-height:1.45;">people with diabetes develop nerve damage in their feet.</div>
+              <div style="font-family:var(--mono); font-size:11px; color:#9a8570;">— NIDDK/NIH · Diabetes Care 2023</div>
+            </div>
+            <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:22px;">
+              <div style="font-weight:800; font-size:34px; letter-spacing:-0.02em; color:var(--honey-deep);">19–34%</div>
+              <div style="font-size:15px; color:#4A3D30; margin:8px 0 12px; line-height:1.45;">will develop a foot ulcer in their lifetime.</div>
+              <div style="font-family:var(--mono); font-size:11px; color:#9a8570;">— Diabetes Care, 2023</div>
+            </div>
+            <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:22px;">
+              <div style="font-weight:800; font-size:34px; letter-spacing:-0.02em; color:var(--honey-deep);">~40%</div>
+              <div style="font-size:15px; color:#4A3D30; margin:8px 0 12px; line-height:1.45;">of healed ulcers return within a year.</div>
+              <div style="font-family:var(--mono); font-size:11px; color:#9a8570;">— IWGDF 2023 · NEJM 2017</div>
+            </div>
+            <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:22px;">
+              <div style="font-weight:800; font-size:34px; letter-spacing:-0.02em; color:var(--cocoa);">5-year survival</div>
+              <div style="font-size:15px; color:#4A3D30; margin:8px 0 12px; line-height:1.45;">after a diabetic foot ulcer is comparable to many cancers.</div>
+              <div style="font-family:var(--mono); font-size:11px; color:#9a8570;">— Armstrong et al., 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal data-reveal-delay="300" style="margin-top:clamp(40px,6vw,60px); border-top:1px solid #EADFCB; padding-top:clamp(32px,5vw,44px);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+            <span style="width:9px; height:9px; border-radius:50%; background:var(--honey-deep); flex:none;"></span>
+            <span style="font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9a8570;">How a small sore turns serious</span>
+          </div>
+          <p style="margin:0 0 8px; font-size:clamp(17px,2vw,20px); line-height:1.6; color:#4A3D30; max-width:64ch;">High blood sugar slows the immune cells that rush to a wound — so a diabetic foot is vulnerable to infection right when it's most fragile, and wounds can get stuck in inflammation instead of healing.</p>
+          <p style="margin:0 0 30px; font-family:var(--mono); font-size:12px; color:#9a8570;">— eLife 2022 · Advances in Wound Care 2024 (established mechanism)</p>
+
+          <div style="display:flex; flex-wrap:wrap; align-items:stretch; gap:10px;">
+            <div style="flex:1 1 130px; background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:16px;">
+              <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#9a8570; margin-bottom:6px;">Starts as</div>
+              <div style="font-weight:700; font-size:16px; color:var(--cocoa);">A foot ulcer</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#C9B792; font-size:20px;">→</div>
+            <div style="flex:1 1 130px; background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:16px;">
+              <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#9a8570; margin-bottom:6px;">Often already</div>
+              <div style="font-weight:700; font-size:16px; color:var(--cocoa);">Infected</div>
+              <div style="font-size:12.5px; color:#4A3D30; margin-top:4px;">~half when first seen</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#C9B792; font-size:20px;">→</div>
+            <div style="flex:1 1 130px; background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:16px;">
+              <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#9a8570; margin-bottom:6px;">Reaches the</div>
+              <div style="font-weight:700; font-size:16px; color:var(--cocoa);">Bone</div>
+              <div style="font-weight:800; font-size:14px; color:var(--honey-deep); margin-top:4px;">~4× amputation odds</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#C9B792; font-size:20px;">→</div>
+            <div style="flex:1 1 130px; background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:16px;">
+              <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#9a8570; margin-bottom:6px;">Tissue loss</div>
+              <div style="font-weight:700; font-size:16px; color:var(--cocoa);">Gangrene</div>
+              <div style="font-weight:800; font-size:14px; color:var(--honey-deep); margin-top:4px;">~11× amputation odds</div>
+            </div>
+          </div>
+          <p style="margin:18px 0 0; font-size:14px; line-height:1.55; color:#4A3D30; max-width:68ch;">Diabetic foot infections are the most common diabetes complication that puts people in the hospital — which is exactly why catching the ulcer early matters. <span style="font-family:var(--mono); font-size:0.85em; color:#9a8570;">— IDSA/IWGDF 2023 · PLoS One 2020 (odds ratios)</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE STORY (VIDEO) ============ -->
+    <section aria-labelledby="story-h" style="background:var(--ink-900); color:var(--ink-50); position:relative; overflow:hidden;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+        <p data-reveal style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey); margin:0 0 16px;">Watch · the one-minute story</p>
+        <h2 id="story-h" data-reveal data-reveal-delay="80" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0 0 clamp(28px,5vw,44px); max-width:18ch;">Why we built the <span style="color:var(--honey);">Lab</span>.</h2>
+        <div data-reveal data-reveal-delay="120" style="margin:0 0 clamp(26px,4vw,38px); display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <div style="position:relative; width:clamp(300px,66vw,440px); aspect-ratio:16/9; border-radius:16px; border:1px solid var(--line); background:var(--ink-l2); overflow:hidden; display:flex; align-items:center; justify-content:center;">
+            <div aria-hidden="true" style="position:absolute; width:140%; height:200%; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.30), transparent 60%); animation:od-breathe 5s ease-in-out infinite;"></div>
+            <div style="position:relative; text-align:center;">
+              <svg viewBox="0 0 120 150" fill="currentColor" style="width:clamp(30px,6vw,44px); height:auto; color:var(--honey); animation:od-mpulse 5s ease-in-out infinite;" aria-hidden="true"><use href="#ftmark"></use></svg>
+              <div style="font-weight:800; font-size:clamp(20px,3.6vw,30px); letter-spacing:-0.02em; color:var(--ink-50); margin-top:10px;">OpenDiabetic Lab</div>
+              <div style="font-family:var(--mono); font-size:clamp(9px,1.4vw,11px); letter-spacing:0.24em; text-transform:uppercase; color:var(--honey); margin-top:8px;">The Digital Foot Lab</div>
+            </div>
+          </div>
+          <div style="font-family:var(--mono); font-size:11.5px; letter-spacing:0.08em; color:#7E8B99;">The 5-second bumper — watch the full minute below ↓</div>
+        </div>
+        <div data-reveal data-reveal-delay="160" style="position:relative;">
+          <div aria-hidden="true" style="position:absolute; inset:-14%; background:radial-gradient(circle at 50% 45%, rgba(242,180,65,0.22), transparent 65%); pointer-events:none;"></div>
+          <video id="od-short-video" controls playsinline preload="metadata" poster="assets/opendiabetic-short-poster.png" style="position:relative; width:clamp(268px,62vw,360px); aspect-ratio:9/16; display:block; border-radius:20px; border:1px solid var(--line); box-shadow:0 40px 90px -40px rgba(0,0,0,0.8), 0 0 0 1px rgba(242,180,65,0.06); background:var(--ink-l2);">
+            <source src="assets/opendiabetic-short.mp4" type="video/mp4" />
+            Your browser doesn't support embedded video. <a href="assets/opendiabetic-short.mp4" style="color:var(--honey);">Watch the OpenDiabetic story</a>.
+          </video>
+        </div>
+        <p data-reveal data-reveal-delay="200" style="font-family:var(--mono); font-size:12.5px; color:#7E8B99; margin:22px 0 0;">Daily foot care · early warning · personalized protection</p>
       </div>
     </section>
 
     <!-- ============ THE LOOP ============ -->
     <section id="loop" aria-labelledby="loop-h" style="background:var(--ink-900); color:var(--ink-50);">
       <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
-        <div style="text-align:center; margin-bottom:clamp(28px,5vw,52px);">
+        <div data-reveal style="text-align:center; margin-bottom:clamp(28px,5vw,52px);">
           <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey); margin:0 0 16px;">The Lab, as a loop</p>
           <h2 id="loop-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.1; font-size:clamp(28px,4.6vw,46px); margin:0 auto; max-width:16ch;">
             Six steps that <span style="color:var(--honey);">feed each other</span>.
           </h2>
         </div>
 
-        <div style="position:relative; width:min(680px,94vw); aspect-ratio:1/1; margin:0 auto;">
-          <svg viewBox="0 0 100 100" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;">
+        <div data-reveal data-reveal-delay="120" style="position:relative; width:min(680px,94vw); aspect-ratio:1/1; margin:0 auto;">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible; transform-origin:center; animation:od-spin 64s linear infinite;">
             <circle cx="50" cy="50" r="38" fill="none" stroke="#F2B441" stroke-opacity="0.32" stroke-width="0.7" stroke-dasharray="1.4 2.4" stroke-linecap="round" />
             <g fill="#F2B441">
               <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(69,17.1) rotate(30)" />
@@ -127,44 +236,45 @@
             </g>
           </svg>
 
-          <!-- center caption -->
-          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(240px,42%); text-align:center;">
-            <span style="font-size:clamp(26px,5vw,40px); line-height:1;" role="img" aria-label="footprints">👣</span>
-            <p style="font-size:clamp(12px,1.6vw,15px); line-height:1.5; color:#AEB9C5; margin:12px 0 0;">The photo you take Monday shapes the insert you wear Friday shapes the photo you take next Monday.</p>
+          <!-- center -->
+          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(250px,44%); text-align:center;">
+            <div style="position:absolute; top:50%; left:50%; width:180px; height:180px; transform:translate(-50%,-50%); background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.28), transparent 68%); animation:od-float 6s ease-in-out infinite; pointer-events:none;"></div>
+            <svg viewBox="0 0 120 150" fill="currentColor" style="position:relative; width:clamp(40px,7vw,56px); height:auto; color:var(--honey);" aria-hidden="true"><use href="#ftmark"></use></svg>
+            <p style="position:relative; font-size:clamp(12px,1.6vw,15px); line-height:1.5; color:#AEB9C5; margin:12px 0 0;">The photo you take Monday shapes the insert you wear Friday shapes the photo you take next Monday.</p>
           </div>
 
           <!-- node 1: top -->
-          <div style="position:absolute; top:12%; left:50%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+          <div style="position:absolute; top:12%; left:50%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px; animation:od-node 7.2s ease-in-out 0s infinite;">
             <div style="font-size:26px; line-height:1;" role="img" aria-label="camera">📷</div>
             <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Daily Foot Monitoring</div>
             <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">see it every day</div>
           </div>
           <!-- node 2: upper right -->
-          <div style="position:absolute; top:31%; left:82.9%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+          <div style="position:absolute; top:31%; left:82.9%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px; animation:od-node 7.2s ease-in-out 1.2s infinite;">
             <div style="font-size:26px; line-height:1;" role="img" aria-label="robot">🤖</div>
             <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">AI-Assisted Review</div>
             <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">nothing slips past</div>
           </div>
           <!-- node 3: lower right -->
-          <div style="position:absolute; top:69%; left:82.9%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+          <div style="position:absolute; top:69%; left:82.9%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px; animation:od-node 7.2s ease-in-out 2.4s infinite;">
             <div style="font-size:26px; line-height:1;" role="img" aria-label="health worker">👨‍⚕️</div>
             <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Clinician in the Loop</div>
             <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">an expert confirms</div>
           </div>
           <!-- node 4: bottom -->
-          <div style="position:absolute; top:88%; left:50%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+          <div style="position:absolute; top:88%; left:50%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px; animation:od-node 7.2s ease-in-out 3.6s infinite;">
             <div style="font-size:26px; line-height:1;" role="img" aria-label="footprints">👣</div>
             <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Personalized Offloading</div>
             <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">take the pressure off</div>
           </div>
           <!-- node 5: lower left -->
-          <div style="position:absolute; top:69%; left:17.1%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+          <div style="position:absolute; top:69%; left:17.1%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px; animation:od-node 7.2s ease-in-out 4.8s infinite;">
             <div style="font-size:26px; line-height:1;" role="img" aria-label="printer">🖨️</div>
             <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Made-to-Fit Inserts, On Demand</div>
             <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">the right insert, fast</div>
           </div>
           <!-- node 6: upper left -->
-          <div style="position:absolute; top:31%; left:17.1%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+          <div style="position:absolute; top:31%; left:17.1%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px; animation:od-node 7.2s ease-in-out 6s infinite;">
             <div style="font-size:26px; line-height:1;" role="img" aria-label="chart">📈</div>
             <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Continuous Foot Health</div>
             <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">catch the next one early</div>
@@ -173,15 +283,71 @@
       </div>
     </section>
 
+    <!-- ============ THE EVIDENCE (prevention) ============ -->
+    <section aria-labelledby="ev-h" style="background:var(--ink-l1); color:var(--ink-50); border-top:1px solid var(--line);">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
+        <div data-reveal style="max-width:40ch; margin-bottom:clamp(32px,5vw,52px);">
+          <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--green); border:1px solid var(--line); background:var(--ink-l2); padding:7px 13px; border-radius:999px; margin-bottom:18px;">
+            <span style="width:8px; height:8px; border-radius:50%; background:var(--green); animation:od-dot 2.6s ease-out infinite;"></span> Every figure adversarially fact-checked
+          </div>
+          <h2 id="ev-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0;">Catching it early <span style="color:var(--honey);">works</span>. The evidence says so.</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;">
+          <div data-reveal data-reveal-delay="0" style="background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:26px;">
+            <div style="font-weight:800; font-size:40px; letter-spacing:-0.02em; color:var(--honey);">~50%</div>
+            <div style="font-weight:700; font-size:16px; color:var(--ink-50); margin:12px 0 6px; letter-spacing:-0.01em;">Prevention works.</div>
+            <div style="font-size:15px; color:#B7C2CE; margin:0 0 16px; line-height:1.5;">Home foot-temperature checks cut new ulcers by roughly half across five randomized trials (RR 0.51).</div>
+            <div style="display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; color:#7E8B99;"><span style="width:6px; height:6px; border-radius:50%; background:var(--green); flex:none;"></span>Meta-analysis 2022 · IWGDF 2023</div>
+          </div>
+          <div data-reveal data-reveal-delay="180" style="background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:26px;">
+            <div style="font-weight:800; font-size:40px; letter-spacing:-0.02em; color:var(--honey);">94%</div>
+            <div style="font-weight:700; font-size:16px; color:var(--ink-50); margin:12px 0 6px; letter-spacing:-0.01em;">Team care saves limbs.</div>
+            <div style="font-size:15px; color:#B7C2CE; margin:0 0 16px; line-height:1.5;">A 2020 systematic review found multidisciplinary foot-care teams linked to fewer major amputations in 94% of studies reviewed.</div>
+            <div style="display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; color:#7E8B99;"><span style="width:6px; height:6px; border-radius:50%; background:var(--green); flex:none;"></span>J Vasc Surg, 2020</div>
+          </div>
+          <div data-reveal data-reveal-delay="270" style="background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:26px;">
+            <div style="font-weight:800; font-size:40px; letter-spacing:-0.02em; color:var(--honey);">Offloading</div>
+            <div style="font-weight:700; font-size:16px; color:var(--ink-50); margin:12px 0 6px; letter-spacing:-0.01em;">Pressure is the problem to solve.</div>
+            <div style="font-size:15px; color:#B7C2CE; margin:0 0 16px; line-height:1.5;">Relieving mechanical stress — offloading — is arguably the most important step in healing a foot ulcer.</div>
+            <div style="display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; color:#7E8B99;"><span style="width:6px; height:6px; border-radius:50%; background:var(--green); flex:none;"></span>IWGDF 2023</div>
+          </div>
+        </div>
+        <p data-reveal data-reveal-delay="120" style="margin:clamp(28px,4vw,40px) 0 0; font-size:14.5px; color:#8A96A3; font-family:var(--mono); line-height:1.7; max-width:70ch;">About one-third of the ~$237B spent on U.S. diabetes care is tied to foot complications — on par with treating all cancers. <span style="color:#6E7C8A;">— Armstrong et al. 2020 (est.) · ADA 2017</span></p>
+
+        <div data-reveal data-reveal-delay="180" style="margin-top:clamp(34px,4.5vw,48px); background:var(--ink-l2); border:1px solid var(--line); border-radius:16px; padding:clamp(24px,3.5vw,38px); display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:clamp(22px,4vw,44px);">
+          <div>
+            <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey); margin-bottom:18px;">
+              <span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span> Do it yourself · Foot temperature check
+            </div>
+            <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:16px;">
+              <span style="font-weight:800; font-size:clamp(42px,6.5vw,64px); letter-spacing:-0.03em; color:var(--honey); line-height:0.9;">4°F</span>
+              <span style="font-family:var(--mono); font-size:16px; color:#8DA0AE;">/ 2.2°C warmer</span>
+            </div>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#B7C2CE;">Check matching spots on both feet once a day with a simple infrared thermometer. A spot about <strong style="color:var(--ink-50); font-weight:600;">4°F (2.2°C) warmer</strong> than the same spot on the other foot can be an early sign of inflammation or pressure stress.</p>
+          </div>
+          <div>
+            <div style="font-weight:700; font-size:16px; color:var(--ink-50); margin-bottom:16px;">If the hotspot repeats</div>
+            <ul style="list-style:none; margin:0 0 16px; padding:0; display:flex; flex-direction:column; gap:12px; font-size:15.5px; color:#B7C2CE;">
+              <li style="display:flex; align-items:center; gap:11px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--honey); flex:none;"></span>Take the pressure off that spot</li>
+              <li style="display:flex; align-items:center; gap:11px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--honey); flex:none;"></span>Look at the skin closely</li>
+              <li style="display:flex; align-items:center; gap:11px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--honey); flex:none;"></span>Take a photo to track it</li>
+              <li style="display:flex; align-items:center; gap:11px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--honey); flex:none;"></span>Contact your care team</li>
+            </ul>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:#8A96A3;">Sooner if there's redness, swelling, drainage, odor, pain, or any open area. <span style="color:#6E7C8A;">A guide, not a diagnosis — your care team decides.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ HOW IT WORKS ============ -->
     <section id="how" aria-labelledby="how-h" style="background:var(--paper); color:var(--cocoa);">
       <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
-        <div style="margin-bottom:clamp(32px,5vw,52px); max-width:32ch;">
+        <div data-reveal style="margin-bottom:clamp(32px,5vw,52px); max-width:32ch;">
           <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 16px;">How it works</p>
           <h2 id="how-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0;">Three places it lives.</h2>
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
-          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+          <div data-reveal data-reveal-delay="0" style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px; transition:transform .28s cubic-bezier(0.2,0.8,0.2,1), box-shadow .28s ease, border-color .28s ease;" style-hover="transform:translateY(-5px); box-shadow:0 24px 46px -26px rgba(43,33,24,0.4); border-color:#E3C98B;">
             <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
               <span style="width:9px; height:9px; border-radius:50%; background:var(--green);"></span>
               <span style="font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9a8570;">Step 01</span>
@@ -189,7 +355,7 @@
             <h3 style="font-weight:800; font-size:22px; margin:0 0 10px; letter-spacing:-0.01em;">At home</h3>
             <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Take a quick photo of each foot with your phone. No appointment, no travel — just a minute, in your own bathroom light.</p>
           </div>
-          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+          <div data-reveal data-reveal-delay="110" style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px; transition:transform .28s cubic-bezier(0.2,0.8,0.2,1), box-shadow .28s ease, border-color .28s ease;" style-hover="transform:translateY(-5px); box-shadow:0 24px 46px -26px rgba(43,33,24,0.4); border-color:#E3C98B;">
             <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
               <span style="width:9px; height:9px; border-radius:50%; background:var(--green);"></span>
               <span style="font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9a8570;">Step 02</span>
@@ -197,7 +363,7 @@
             <h3 style="font-weight:800; font-size:22px; margin:0 0 10px; letter-spacing:-0.01em;">In your hands</h3>
             <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">The Lab flags what changed and, when an insert can help, makes one to fit you — printed and shipped, no mould, no wait.</p>
           </div>
-          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+          <div data-reveal data-reveal-delay="220" style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px; transition:transform .28s cubic-bezier(0.2,0.8,0.2,1), box-shadow .28s ease, border-color .28s ease;" style-hover="transform:translateY(-5px); box-shadow:0 24px 46px -26px rgba(43,33,24,0.4); border-color:#E3C98B;">
             <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
               <span style="width:9px; height:9px; border-radius:50%; background:var(--green);"></span>
               <span style="font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9a8570;">Step 03</span>
@@ -212,17 +378,17 @@
     <!-- ============ DEFENDABLE / TRUST ============ -->
     <section aria-labelledby="trust-h" style="background:var(--ink-900); color:var(--ink-50);">
       <div style="max-width:900px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px; text-align:center;">
-        <h2 id="trust-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.14; font-size:clamp(26px,4.2vw,42px); margin:0 auto 18px; max-width:24ch;">
+        <h2 id="trust-h" data-reveal style="font-weight:800; letter-spacing:-0.02em; line-height:1.14; font-size:clamp(26px,4.2vw,42px); margin:0 auto 18px; max-width:24ch;">
           A change caught early is a <span style="color:var(--honey);">foot kept</span>. Every step, receipted.
         </h2>
-        <p style="font-size:17px; color:#AEB9C5; max-width:60ch; margin:0 auto 34px; line-height:1.6;">
+        <p data-reveal data-reveal-delay="90" style="font-size:17px; color:#AEB9C5; max-width:60ch; margin:0 auto 34px; line-height:1.6;">
           The Lab keeps a plain record of what it saw, what it suggested, and who confirmed it — <span style="font-family:var(--mono); color:var(--honey);">a receipt for every foot check</span>.
         </p>
-        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>Private by default</li>
-          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>Your data stays home</li>
-          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>A real clinician confirms</li>
-          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--blue);"></span>It never diagnoses</li>
+        <ul data-reveal data-reveal-delay="160" style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600; transition:border-color .2s ease, transform .2s ease;" style-hover="border-color:rgba(242,180,65,0.4); transform:translateY(-2px);"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>Private by default</li>
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600; transition:border-color .2s ease, transform .2s ease;" style-hover="border-color:rgba(242,180,65,0.4); transform:translateY(-2px);"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>Your data stays home</li>
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600; transition:border-color .2s ease, transform .2s ease;" style-hover="border-color:rgba(242,180,65,0.4); transform:translateY(-2px);"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>A real clinician confirms</li>
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600; transition:border-color .2s ease, transform .2s ease;" style-hover="border-color:rgba(61,155,233,0.4); transform:translateY(-2px);"><span style="width:8px; height:8px; border-radius:50%; background:var(--blue);"></span>It never diagnoses</li>
         </ul>
       </div>
     </section>
@@ -230,20 +396,22 @@
     <!-- ============ WHO IT'S FOR ============ -->
     <section id="who" aria-labelledby="who-h" style="background:var(--paper); color:var(--cocoa);">
       <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
-        <div style="margin-bottom:clamp(32px,5vw,52px); max-width:34ch;">
+        <div data-reveal style="margin-bottom:clamp(32px,5vw,52px); max-width:56ch;">
           <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 16px;">Who it's for</p>
           <h2 id="who-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0;">The person in the chair — and everyone around them.</h2>
+          <p style="margin:18px 0 0; font-size:clamp(17px,2vw,20px); line-height:1.55; color:#4A3D30;"><span style="color:var(--honey-deep); font-weight:700;">Type 1 or Type 2</span> — if you live with diabetes, your feet carry the risk.</p>
+          <p style="margin:14px 0 0; font-size:16px; line-height:1.55; color:#4A3D30;">Type 1 is autoimmune, Type 2 is insulin resistance — but both damage the nerves and circulation in your feet. And after a foot ulcer, Type 1 is not spared.<span style="display:block; font-family:var(--mono); font-size:0.7em; color:#9a8570; margin-top:6px;">— Diabetes Care, 2022</span></p>
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
-          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+          <div data-reveal data-reveal-delay="0" style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px; transition:transform .28s cubic-bezier(0.2,0.8,0.2,1), box-shadow .28s ease, border-color .28s ease;" style-hover="transform:translateY(-5px); box-shadow:0 24px 46px -26px rgba(43,33,24,0.4); border-color:#E3C98B;">
             <h3 style="font-weight:800; font-size:20px; margin:0 0 10px; letter-spacing:-0.01em;">People living with diabetes</h3>
-            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Especially anyone at higher risk — with neuropathy, a past ulcer, or reduced circulation. A daily check that fits into real life.</p>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Type 1 or Type 2, newly diagnosed or decades in — especially anyone at higher risk, with neuropathy, a past ulcer, or reduced circulation. A daily check that fits into real life.</p>
           </div>
-          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+          <div data-reveal data-reveal-delay="110" style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px; transition:transform .28s cubic-bezier(0.2,0.8,0.2,1), box-shadow .28s ease, border-color .28s ease;" style-hover="transform:translateY(-5px); box-shadow:0 24px 46px -26px rgba(43,33,24,0.4); border-color:#E3C98B;">
             <h3 style="font-weight:800; font-size:20px; margin:0 0 10px; letter-spacing:-0.01em;">Caregivers</h3>
             <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">A partner, a son or daughter, a nurse. Someone who wants to help watch — and to know when it's time to call the clinic.</p>
           </div>
-          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+          <div data-reveal data-reveal-delay="220" style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px; transition:transform .28s cubic-bezier(0.2,0.8,0.2,1), box-shadow .28s ease, border-color .28s ease;" style-hover="transform:translateY(-5px); box-shadow:0 24px 46px -26px rgba(43,33,24,0.4); border-color:#E3C98B;">
             <h3 style="font-weight:800; font-size:20px; margin:0 0 10px; letter-spacing:-0.01em;">The clinic</h3>
             <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Podiatry and primary-care teams who want eyes on feet between visits — with a clear record and their clinician kept in the loop.</p>
           </div>
@@ -252,11 +420,16 @@
     </section>
 
     <!-- ============ FINAL CTA ============ -->
-    <section id="final" aria-labelledby="final-h" style="background:linear-gradient(180deg,var(--honey) 0%,var(--honey-deep) 100%); color:var(--cocoa);">
-      <div style="max-width:840px; margin:0 auto; padding:clamp(64px,9vw,110px) 22px; text-align:center;">
-        <h2 id="final-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.06; font-size:clamp(34px,6vw,64px); margin:0 0 22px;">Keep your feet.<br />Start today.</h2>
-        <p style="font-size:clamp(17px,2.2vw,20px); color:#5C4A38; max-width:52ch; margin:0 auto 32px; line-height:1.55;">One photo is all it takes to begin. We'll walk you through the rest.</p>
-        <a href="mailto:build@opendiabetic.com" style="display:inline-block; background:var(--cocoa); color:var(--paper); text-decoration:none; font-weight:700; font-size:17px; padding:16px 32px; border-radius:10px;" style-hover="background:#1c150e;">Start a foot check</a>
+    <section id="final" aria-labelledby="final-h" style="background:linear-gradient(180deg,var(--honey) 0%,var(--honey-deep) 100%); color:var(--cocoa); position:relative; overflow:hidden;">
+      <div style="max-width:840px; margin:0 auto; padding:clamp(64px,9vw,110px) 22px; text-align:center; position:relative; z-index:1;">
+        <div data-reveal style="display:inline-block; margin-bottom:22px;">
+          <svg viewBox="0 0 120 150" fill="currentColor" style="width:clamp(48px,6vw,68px); height:auto; color:var(--cocoa);" aria-hidden="true"><use href="#ftmark"></use></svg>
+        </div>
+        <h2 id="final-h" data-reveal data-reveal-delay="80" style="font-weight:800; letter-spacing:-0.02em; line-height:1.06; font-size:clamp(34px,6vw,64px); margin:0 0 22px;">Keep your feet.<br />Start today.</h2>
+        <p data-reveal data-reveal-delay="150" style="font-size:clamp(17px,2.2vw,20px); color:#5C4A38; max-width:52ch; margin:0 auto 32px; line-height:1.55;">One photo is all it takes to begin. We'll walk you through the rest.</p>
+        <div data-reveal data-reveal-delay="220">
+          <a href="mailto:build@opendiabetic.com" style="display:inline-block; background:var(--cocoa); color:var(--paper); text-decoration:none; font-weight:700; font-size:17px; padding:16px 32px; border-radius:10px; transition:background .2s ease, transform .2s ease, box-shadow .2s ease;" style-hover="background:#1c150e; transform:translateY(-2px); box-shadow:0 18px 38px -18px rgba(28,21,14,0.6);">Start a foot check</a>
+        </div>
       </div>
     </section>
   </main>
@@ -266,8 +439,8 @@
     <div style="max-width:1080px; margin:0 auto; padding:clamp(52px,7vw,80px) 22px 40px;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:40px 32px;">
         <div>
-          <div style="display:flex; align-items:baseline; gap:9px; font-weight:800; font-size:19px; letter-spacing:-0.02em; margin-bottom:12px;">
-            <span style="font-size:20px;" role="img" aria-label="foot">🦶</span> OpenDiabetic
+          <div style="display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; letter-spacing:-0.02em; margin-bottom:12px;">
+            <svg viewBox="0 0 120 150" width="18" height="22" fill="currentColor" style="color:var(--honey); flex:none;" aria-hidden="true"><use href="#ftmark"></use></svg> OpenDiabetic
           </div>
           <p style="margin:0 0 16px; color:#8A96A3; font-size:14px; max-width:34ch; line-height:1.6;">The Digital Foot Lab. We help people with diabetes catch foot trouble while it's still small. We never diagnose or replace your doctor.</p>
           <p style="margin:0; font-size:14px; color:#AEB9C5; display:inline-flex; align-items:center; gap:8px;">
@@ -278,21 +451,21 @@
         <div>
           <div style="font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6E7C8A; margin-bottom:14px;">Contact</div>
           <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
-            <li><a href="https://x.com/opendiabetics" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">X — @opendiabetics</a></li>
-            <li><a href="mailto:build@opendiabetic.com" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">build@opendiabetic.com</a></li>
-            <li><a href="tel:+15615327120" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">561.532.7120</a></li>
+            <li><a href="https://x.com/opendiabetics" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">X — @opendiabetics</a></li>
+            <li><a href="mailto:build@opendiabetic.com" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">build@opendiabetic.com</a></li>
+            <li><a href="tel:+15615327120" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">561.532.7120</a></li>
             <li style="color:#8A96A3;">Jupiter, FL</li>
-            <li><a href="https://github.com/SudoSuOps" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">GitHub — SudoSuOps</a></li>
+            <li><a href="https://github.com/SudoSuOps" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">GitHub — SudoSuOps</a></li>
           </ul>
         </div>
 
         <div>
           <div style="font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6E7C8A; margin-bottom:14px;">Ecosystem</div>
           <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
-            <li><a href="https://swarmandbee.com" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">Swarm &amp; Bee</a></li>
-            <li><a href="#loop" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">The Lab</a></li>
-            <li><a href="#how" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">How it works</a></li>
-            <li><a href="#who" style="color:var(--ink-50); text-decoration:none;" style-hover="color:var(--honey);">For clinicians</a></li>
+            <li><a href="https://swarmandbee.com" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">Swarm &amp; Bee</a></li>
+            <li><a href="#loop" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">The Lab</a></li>
+            <li><a href="#how" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">How it works</a></li>
+            <li><a href="#who" style="color:var(--ink-50); text-decoration:none; transition:color .2s ease;" style-hover="color:var(--honey);">For clinicians</a></li>
           </ul>
         </div>
       </div>
@@ -308,14 +481,73 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;animateGlow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      // Scroll-reveal as PROGRESSIVE ENHANCEMENT only. Content is always visible
+      // by default (base opacity 1). We opt-in to a reveal ONLY when the browser
+      // proves its rAF loop is actually running (two live frames) — so on any
+      // paused/throttled/no-JS context the content simply stays visible instead
+      // of getting stuck hidden.
+      const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      if (!rm && els.length && typeof IntersectionObserver !== 'undefined') {
+        let frames = 0;
+        const arm = () => {
+          frames++;
+          if (frames < 2) { requestAnimationFrame(arm); return; }
+          // rAF is live — safe to hide, then reveal on scroll-in.
+          els.forEach(e => {
+            e.style.opacity = '0';
+            e.style.transform = 'translateY(26px)';
+            e.style.transition = 'opacity .7s cubic-bezier(0.2,0.8,0.2,1), transform .7s cubic-bezier(0.2,0.8,0.2,1)';
+          });
+          const io = new IntersectionObserver((ents) => {
+            ents.forEach(en => {
+              if (en.isIntersecting) {
+                const el = en.target;
+                el.style.transitionDelay = (parseInt(el.getAttribute('data-reveal-delay') || '0', 10)) + 'ms';
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                io.unobserve(el);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+          els.forEach(e => io.observe(e));
+          setTimeout(() => els.forEach(e => { e.style.opacity = '1'; e.style.transform = 'none'; }), 1800);
+        };
+        requestAnimationFrame(arm);
+      }
+      const hd = document.getElementById('siteheader');
+      if (hd) {
+        const onScroll = () => {
+          const s = window.scrollY > 8;
+          hd.style.boxShadow = s ? '0 12px 32px -20px rgba(0,0,0,0.85)' : 'none';
+          hd.style.borderBottomColor = s ? 'rgba(242,180,65,0.18)' : '#1F2A36';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        this._onScroll = onScroll;
+      }
+      // Embedded short: persist playback position across reloads.
+      const vid = document.getElementById('od-short-video');
+      if (vid) {
+        const VKEY = 'od-short-vid-t';
+        vid.addEventListener('loadedmetadata', () => { try { const s = parseFloat(localStorage.getItem(VKEY) || '0'); if (s > 0 && vid.duration && s < vid.duration - 0.5) vid.currentTime = s; } catch (e) {} });
+        vid.addEventListener('timeupdate', () => { try { localStorage.setItem(VKEY, String(vid.currentTime)); } catch (e) {} });
+      }
+    } catch (e) {}
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
   renderVals() {
     const animateGlow = this.props.animateGlow ?? true;
     return {
       glowStyle: {
-        position: 'absolute', inset: '-20% -10% auto -10%', height: '820px', pointerEvents: 'none',
-        background: 'radial-gradient(60% 70% at 50% 12%, rgba(242,180,65,0.30), rgba(242,180,65,0.10) 42%, transparent 70%)',
-        filter: 'blur(6px)', zIndex: 0,
-        animation: animateGlow ? 'od-glow 7s ease-in-out infinite alternate' : 'none'
+        position: 'absolute', inset: '-25% -10% auto -10%', height: '900px', pointerEvents: 'none',
+        background: 'radial-gradient(58% 68% at 50% 12%, rgba(242,180,65,0.34), rgba(242,180,65,0.10) 44%, transparent 72%)',
+        filter: 'blur(8px)', zIndex: 0, transformOrigin: '50% 20%',
+        animation: animateGlow ? 'od-breathe 7s ease-in-out infinite' : 'none'
       }
     };
   }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>OpenDiabetic — Animated Lower-Third</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>body{margin:0; background:#0e141b;}</style>
+</helmet>
+<div style="position:fixed; inset:0; z-index:0; background:linear-gradient(135deg,#141c26,#0b0f14);">
+  <div style="position:absolute; inset:0; background:radial-gradient(700px 500px at 78% 28%, rgba(242,180,65,0.10), transparent 60%);"></div>
+  <div style="position:absolute; top:24px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:14px; letter-spacing:0.14em; color:rgba(255,255,255,0.28);">SAMPLE VIDEO FRAME — the exported overlay is transparent</div>
+</div>
+<div style="position:fixed; inset:0; z-index:1;">
+  <x-import component-from-global-scope="LowerThird" from="./animations.jsx ./LowerThird.jsx" hint-size="100%,100%"></x-import>
+</div>
+</x-dc>
+</body>
+</html>
