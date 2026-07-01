@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" width="120" height="150" fill="currentColor" role="img" aria-label="OpenDiabetic foot mark">
+  <path d="M42,58 C38,44 40,34 52,32 C66,30 82,36 84,54 C86,68 80,80 74,92 C69,102 71,112 68,124 C65,138 54,142 45,138 C36,134 33,124 35,112 C37,102 44,96 44,86 C44,76 46,70 42,58 Z"></path>
+  <ellipse cx="46" cy="22" rx="9" ry="11"></ellipse>
+  <ellipse cx="62" cy="16" rx="7.5" ry="9.5"></ellipse>
+  <ellipse cx="75" cy="19" rx="6.5" ry="8"></ellipse>
+  <ellipse cx="86" cy="26" rx="5.5" ry="7"></ellipse>
+  <ellipse cx="95" cy="35" rx="5" ry="6"></ellipse>
+</svg>

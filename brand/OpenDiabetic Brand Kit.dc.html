@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<title>OpenDiabetic — Brand Asset Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --honey:#F2B441; --honey-deep:#D99A2B; --paper:#FBF7EF; --cocoa:#2B2118;
+    --ink-900:#0B0F14; --ink-l1:#0e141b; --ink-l2:#121922; --ink-50:#E8EEF5;
+    --line:#1F2A36; --green:#2FB67A; --red:#E2524F; --blue:#3D9BE9;
+    --sans:'Figtree',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:#E7E0D2;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important;} }
+  @keyframes stingMark{0%{opacity:0;transform:scale(.55)}12%{opacity:1;transform:scale(1)}78%{opacity:1;transform:scale(1)}90%,100%{opacity:0;transform:scale(1.06)}}
+  @keyframes stingWord{0%,10%{opacity:0;transform:translateY(20px)}24%{opacity:1;transform:translateY(0)}78%{opacity:1;transform:translateY(0)}90%,100%{opacity:0;transform:translateY(-6px)}}
+  @keyframes stingTag{0%,26%{opacity:0}42%{opacity:1}78%{opacity:1}90%,100%{opacity:0}}
+  @keyframes stingGlow{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.9;transform:scale(1.08)}}
+  @keyframes lt3{0%{opacity:0;transform:translateX(-44px)}9%{opacity:1;transform:translateX(0)}84%{opacity:1;transform:translateX(0)}93%,100%{opacity:0;transform:translateX(-22px)}}
+  @keyframes ltBar{0%,3%{transform:scaleX(0)}14%{transform:scaleX(1)}84%{transform:scaleX(1)}93%,100%{transform:scaleX(0)}}
+  @keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+</style>
+</helmet>
+
+<div style="font-family:var(--sans); color:#4A3D30; padding:64px clamp(24px,4vw,80px) 120px; display:flex; flex-direction:column; align-items:center; gap:16px; min-width:2720px;">
+
+  <!-- reusable foot mark -->
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true"><symbol id="ftmark" viewBox="0 0 120 150"><path d="M42,58 C38,44 40,34 52,32 C66,30 82,36 84,54 C86,68 80,80 74,92 C69,102 71,112 68,124 C65,138 54,142 45,138 C36,134 33,124 35,112 C37,102 44,96 44,86 C44,76 46,70 42,58 Z"/><ellipse cx="46" cy="22" rx="9" ry="11"/><ellipse cx="62" cy="16" rx="7.5" ry="9.5"/><ellipse cx="75" cy="19" rx="6.5" ry="8"/><ellipse cx="86" cy="26" rx="5.5" ry="7"/><ellipse cx="95" cy="35" rx="5" ry="6"/></symbol></svg>
+
+  <!-- ===== KIT HEADER ===== -->
+  <header style="width:100%; max-width:1200px; margin-bottom:28px; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div style="width:64px; height:64px; border-radius:16px; background:var(--ink-900); display:flex; align-items:center; justify-content:center; color:var(--honey);">
+        <svg viewBox="0 0 120 150" width="34" height="42" fill="currentColor"><use href="#ftmark"></use></svg>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:30px; color:var(--cocoa); letter-spacing:-0.02em;">OpenDiabetic — Brand Asset Kit</div>
+        <div style="font-family:var(--mono); font-size:13px; color:#8A7B63; margin-top:4px;">The Digital Foot Lab · export-ready artboards at exact px · v1</div>
+      </div>
+    </div>
+    <div style="font-family:var(--mono); font-size:12px; color:#8A7B63; max-width:340px; text-align:right; line-height:1.6;">Each frame is labeled with its true pixel size. Export a frame individually to get that exact dimension.</div>
+  </header>
+
+  <!-- ============================================================= -->
+  <!-- GROUP: LOGO SYSTEM -->
+  <!-- ============================================================= -->
+  <div style="width:100%; max-width:2560px; font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#8A7B63; border-bottom:1px solid #CBC1AD; padding-bottom:10px; margin-top:32px;">01 · Logo system</div>
+
+  <!-- Lockups (paper) -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Primary lockups · 1200×760 · paper</figcaption>
+    <div style="width:1200px; height:760px; background:var(--paper); border-radius:16px; overflow:hidden; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; color:var(--cocoa);">
+      <div style="display:flex; align-items:center; justify-content:center; border-right:1px solid #EADFCB; border-bottom:1px solid #EADFCB; gap:22px; padding:40px;">
+        <svg viewBox="0 0 120 150" width="72" height="90" fill="currentColor" style="color:var(--honey-deep); flex:none;"><use href="#ftmark"></use></svg>
+        <div>
+          <div style="font-weight:800; font-size:52px; letter-spacing:-0.03em; line-height:1;">OpenDiabetic</div>
+          <div style="font-family:var(--mono); font-size:15px; letter-spacing:0.22em; text-transform:uppercase; color:var(--honey-deep); margin-top:12px;">The Digital Foot Lab</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; border-bottom:1px solid #EADFCB; gap:18px; padding:40px;">
+        <svg viewBox="0 0 120 150" width="82" height="102" fill="currentColor" style="color:var(--honey-deep);"><use href="#ftmark"></use></svg>
+        <div>
+          <div style="font-weight:800; font-size:44px; letter-spacing:-0.03em; line-height:1;">OpenDiabetic</div>
+          <div style="font-family:var(--mono); font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:var(--honey-deep); margin-top:11px;">The Digital Foot Lab</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; border-right:1px solid #EADFCB; gap:16px; padding:40px;">
+        <svg viewBox="0 0 120 150" width="44" height="55" fill="currentColor" style="color:var(--honey-deep); flex:none;"><use href="#ftmark"></use></svg>
+        <div style="font-weight:800; font-size:38px; letter-spacing:-0.03em;">OpenDiabetic</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; padding:40px;">
+        <div style="text-align:center;">
+          <svg viewBox="0 0 120 150" width="76" height="95" fill="currentColor" style="color:var(--honey-deep);"><use href="#ftmark"></use></svg>
+          <div style="font-family:var(--mono); font-size:12px; color:#9a8570; margin-top:14px;">Mark only</div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- Color / mono variants (ink) -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Color & mono variants · 1200×620</figcaption>
+    <div style="width:1200px; height:620px; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:1fr 1fr; gap:16px;">
+      <div style="background:var(--ink-900); border-radius:16px; display:flex; align-items:center; justify-content:center; gap:16px; color:var(--honey);">
+        <svg viewBox="0 0 120 150" width="46" height="58" fill="currentColor" style="flex:none;"><use href="#ftmark"></use></svg>
+        <div style="font-weight:800; font-size:30px; letter-spacing:-0.02em; color:var(--ink-50);">OpenDiabetic</div>
+      </div>
+      <div style="background:var(--honey); border-radius:16px; display:flex; align-items:center; justify-content:center; gap:16px; color:var(--cocoa);">
+        <svg viewBox="0 0 120 150" width="46" height="58" fill="currentColor" style="flex:none;"><use href="#ftmark"></use></svg>
+        <div style="font-weight:800; font-size:30px; letter-spacing:-0.02em;">OpenDiabetic</div>
+      </div>
+      <div style="background:var(--paper); border-radius:16px; display:flex; align-items:center; justify-content:center; gap:16px; color:var(--cocoa); border:1px solid #EADFCB;">
+        <svg viewBox="0 0 120 150" width="46" height="58" fill="currentColor" style="flex:none; color:var(--honey-deep);"><use href="#ftmark"></use></svg>
+        <div style="font-weight:800; font-size:30px; letter-spacing:-0.02em;">OpenDiabetic</div>
+      </div>
+      <div style="background:var(--ink-900); border-radius:16px; display:flex; align-items:center; justify-content:center; color:var(--ink-50);">
+        <svg viewBox="0 0 120 150" width="60" height="75" fill="currentColor"><use href="#ftmark"></use></svg>
+      </div>
+      <div style="background:var(--cocoa); border-radius:16px; display:flex; align-items:center; justify-content:center; color:var(--paper);">
+        <svg viewBox="0 0 120 150" width="60" height="75" fill="currentColor"><use href="#ftmark"></use></svg>
+      </div>
+      <div style="background:var(--paper); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; border:1px solid #EADFCB;">
+        <div style="width:120px; height:120px; border-radius:28px; background:var(--ink-900); display:flex; align-items:center; justify-content:center; color:var(--honey);">
+          <svg viewBox="0 0 120 150" width="56" height="70" fill="currentColor"><use href="#ftmark"></use></svg>
+        </div>
+        <div style="font-family:var(--mono); font-size:12px; color:#9a8570;">App / avatar tile</div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- Clear space & minimum size -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Clear space & minimum size · 1200×520</figcaption>
+    <div style="width:1200px; height:520px; background:var(--paper); border-radius:16px; overflow:hidden; display:grid; grid-template-columns:1.15fr 1fr; color:var(--cocoa);">
+      <div style="padding:48px; border-right:1px solid #EADFCB; display:flex; flex-direction:column;">
+        <div style="font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#9a8570; margin-bottom:8px;">Clear space</div>
+        <div style="font-size:15px; color:#4A3D30; margin-bottom:24px; max-width:44ch; line-height:1.5;">Keep padding of at least <strong>½ the mark height</strong> (= <span style="font-family:var(--mono);">1×</span> below) clear on all sides. Nothing intrudes.</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+          <div style="position:relative; padding:33px;">
+            <div style="position:absolute; inset:0; border:1.5px dashed #D4A63A; border-radius:8px;"></div>
+            <div style="position:absolute; left:-11px; top:33px; bottom:33px; width:22px; border-left:1px solid #D4A63A; border-right:1px solid #D4A63A;"></div>
+            <div style="position:absolute; left:-40px; top:50%; transform:translateY(-50%) rotate(-90deg); font-family:var(--mono); font-size:11px; color:#9a8570;">1× = ½ mark</div>
+            <div style="display:flex; align-items:center; gap:14px; color:var(--honey-deep);">
+              <svg viewBox="0 0 120 150" width="53" height="66" fill="currentColor"><use href="#ftmark"></use></svg>
+              <div style="font-weight:800; font-size:30px; color:var(--cocoa); letter-spacing:-0.02em;">OpenDiabetic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:48px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#9a8570; margin-bottom:8px;">Minimum size</div>
+        <div style="font-size:15px; color:#4A3D30; margin-bottom:28px; max-width:40ch; line-height:1.5;">Don't go smaller than these on screen. Below min, use the mark alone.</div>
+        <div style="display:flex; flex-direction:column; gap:26px;">
+          <div style="display:flex; align-items:center; gap:20px;">
+            <div style="display:flex; align-items:center; gap:8px; color:var(--honey-deep); width:220px;">
+              <svg viewBox="0 0 120 150" width="22" height="27" fill="currentColor"><use href="#ftmark"></use></svg>
+              <div style="font-weight:800; font-size:14px; color:var(--cocoa); letter-spacing:-0.01em;">OpenDiabetic</div>
+            </div>
+            <div style="font-family:var(--mono); font-size:13px; color:#9a8570;">Full lockup · min 120px wide</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <div style="width:220px; display:flex; color:var(--honey-deep);"><svg viewBox="0 0 120 150" width="20" height="25" fill="currentColor"><use href="#ftmark"></use></svg></div>
+            <div style="font-family:var(--mono); font-size:13px; color:#9a8570;">Mark only · min 24px · favicon / app</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:20px;">
+            <div style="width:220px; display:flex; align-items:center;"><div style="width:44px; height:44px; border-radius:12px; background:var(--ink-900); display:flex; align-items:center; justify-content:center; color:var(--honey);"><svg viewBox="0 0 120 150" width="22" height="27" fill="currentColor"><use href="#ftmark"></use></svg></div></div>
+            <div style="font-family:var(--mono); font-size:13px; color:#9a8570;">Tile · min 44px · tap target</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- ============================================================= -->
+  <!-- GROUP: PROFILE + BANNERS -->
+  <!-- ============================================================= -->
+  <div style="width:100%; max-width:2560px; font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#8A7B63; border-bottom:1px solid #CBC1AD; padding-bottom:10px; margin-top:48px;">02 · Profiles & headers</div>
+
+  <!-- Avatar master -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Avatar master · 800×800 · circle-safe (exports to X 400, YouTube 800, Facebook 720)</figcaption>
+    <div style="width:800px; height:800px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; align-items:center; justify-content:center;">
+      <div style="position:absolute; inset:0; margin:auto; width:960px; height:960px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.34), rgba(242,180,65,0.08) 46%, transparent 68%);"></div>
+      <div style="position:absolute; inset:36px; border-radius:50%; border:2px dashed rgba(255,255,255,0.16);"></div>
+      <div style="position:relative; text-align:center; color:var(--honey);">
+        <svg viewBox="0 0 120 150" width="300" height="375" fill="currentColor"><use href="#ftmark"></use></svg>
+      </div>
+    </div>
+  </figure>
+
+  <!-- X header -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">X / Twitter header · 1500×500</figcaption>
+    <div style="width:1500px; height:500px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; align-items:center; padding:0 100px;">
+      <div style="position:absolute; right:-120px; top:-140px; width:760px; height:760px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.30), rgba(242,180,65,0.06) 48%, transparent 70%);"></div>
+      <div style="position:relative; z-index:1; max-width:900px;">
+        <div style="display:flex; align-items:center; gap:18px; margin-bottom:22px; color:var(--honey);">
+          <svg viewBox="0 0 120 150" width="52" height="65" fill="currentColor"><use href="#ftmark"></use></svg>
+          <div style="font-weight:800; font-size:40px; color:var(--ink-50); letter-spacing:-0.02em;">OpenDiabetic</div>
+        </div>
+        <div style="font-weight:800; font-size:58px; line-height:1.02; letter-spacing:-0.03em; color:var(--ink-50);">Helping people keep their <span style="color:var(--honey);">feet</span>.</div>
+        <div style="font-family:var(--mono); font-size:16px; letter-spacing:0.14em; text-transform:uppercase; color:#8DA0AE; margin-top:18px;">The Digital Foot Lab</div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- Facebook cover -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Facebook page cover · 1640×624 (displays 820×312)</figcaption>
+    <div style="width:1640px; height:624px; border-radius:16px; overflow:hidden; background:var(--paper); position:relative; display:flex; align-items:center; padding:0 120px; color:var(--cocoa);">
+      <div style="position:absolute; right:60px; top:50%; transform:translateY(-50%); width:440px; height:440px; border-radius:50%; background:var(--ink-900); display:flex; align-items:center; justify-content:center; color:var(--honey);">
+        <svg viewBox="0 0 120 150" width="210" height="262" fill="currentColor"><use href="#ftmark"></use></svg>
+      </div>
+      <div style="position:relative; max-width:900px;">
+        <div style="font-family:var(--mono); font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:var(--honey-deep); margin-bottom:18px;">The Digital Foot Lab</div>
+        <div style="font-weight:800; font-size:66px; line-height:1.02; letter-spacing:-0.03em; max-width:14ch;">Helping people keep their <span style="color:var(--honey-deep);">feet</span>.</div>
+        <div style="font-size:22px; color:#4A3D30; margin-top:20px; max-width:38ch; line-height:1.5;">Catch the problem while it's still small — at home, in your hands, with your care team.</div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- YouTube channel art -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">YouTube channel art · 2560×1440 · content in center TV-safe 1546×423</figcaption>
+    <div style="width:2560px; height:1440px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; align-items:center; justify-content:center;">
+      <div style="position:absolute; inset:0; background:radial-gradient(1200px 700px at 50% 40%, rgba(242,180,65,0.20), transparent 60%);"></div>
+      <!-- safe zone guide -->
+      <div style="position:absolute; width:1546px; height:423px; border:2px dashed rgba(255,255,255,0.18); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+        <div style="position:relative; z-index:1; text-align:center; color:var(--honey);">
+          <div style="display:flex; align-items:center; justify-content:center; gap:24px; color:var(--honey);">
+            <svg viewBox="0 0 120 150" width="86" height="107" fill="currentColor"><use href="#ftmark"></use></svg>
+            <div style="font-weight:800; font-size:76px; color:var(--ink-50); letter-spacing:-0.03em;">OpenDiabetic</div>
+          </div>
+          <div style="font-family:var(--mono); font-size:24px; letter-spacing:0.24em; text-transform:uppercase; color:#8DA0AE; margin-top:22px;">The Digital Foot Lab · keep your feet</div>
+        </div>
+      </div>
+      <div style="position:absolute; bottom:22px; left:22px; font-family:var(--mono); font-size:22px; color:rgba(255,255,255,0.35);">safe area 1546 × 423 — text/logo stays inside</div>
+    </div>
+  </figure>
+
+  <!-- ============================================================= -->
+  <!-- GROUP: CONTENT TEMPLATES -->
+  <!-- ============================================================= -->
+  <div style="width:100%; max-width:2560px; font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#8A7B63; border-bottom:1px solid #CBC1AD; padding-bottom:10px; margin-top:48px;">03 · Content templates</div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start; justify-content:center; width:100%; max-width:2560px;">
+
+    <!-- YouTube thumbnail -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+      <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">YouTube thumbnail · 1280×720</figcaption>
+      <div style="width:1280px; height:720px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; flex-direction:column; justify-content:center; padding:70px 80px; color:var(--ink-50);">
+        <div style="position:absolute; right:-60px; bottom:-120px; width:560px; height:560px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.28), transparent 66%);"></div>
+        <div style="position:absolute; right:70px; bottom:60px; color:var(--honey); opacity:0.9;"><svg viewBox="0 0 120 150" width="240" height="300" fill="currentColor"><use href="#ftmark"></use></svg></div>
+        <div style="font-family:var(--mono); font-size:22px; letter-spacing:0.16em; text-transform:uppercase; color:var(--honey); margin-bottom:22px;">Foot check · 60 sec</div>
+        <div style="font-weight:800; font-size:104px; line-height:0.98; letter-spacing:-0.03em; max-width:15ch;">Can't feel your feet?</div>
+        <div style="font-size:34px; color:#B7C2CE; margin-top:26px; max-width:20ch;">Why a daily look matters more than it seems.</div>
+      </div>
+    </figure>
+
+    <!-- Square post -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+      <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Square post · 1080×1080</figcaption>
+      <div style="width:1080px; height:1080px; border-radius:16px; overflow:hidden; background:var(--paper); position:relative; display:flex; flex-direction:column; padding:90px; color:var(--cocoa);">
+        <div style="display:flex; align-items:center; gap:16px; color:var(--honey-deep);">
+          <svg viewBox="0 0 120 150" width="46" height="58" fill="currentColor"><use href="#ftmark"></use></svg>
+          <div style="font-weight:800; font-size:34px; color:var(--cocoa); letter-spacing:-0.02em;">OpenDiabetic</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-family:var(--mono); font-size:22px; letter-spacing:0.16em; text-transform:uppercase; color:var(--honey-deep); margin-bottom:28px;">Today's foot check</div>
+          <div style="font-weight:800; font-size:76px; line-height:1.05; letter-spacing:-0.03em;">Look between your <span style="color:var(--honey-deep);">toes</span> today.</div>
+          <div style="font-size:32px; color:#4A3D30; margin-top:30px; line-height:1.45; max-width:24ch;">You can't fix what you can't see — and numb feet don't warn you.</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; font-size:22px; color:#8A7B63;">
+          <span style="width:12px; height:12px; border-radius:50%; background:var(--green);"></span>
+          A minute a day. Never a diagnosis.
+        </div>
+      </div>
+    </figure>
+
+    <!-- Vertical post / story -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+      <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Vertical post / story · 1080×1920</figcaption>
+      <div style="width:1080px; height:1920px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; flex-direction:column; padding:110px 90px; color:var(--ink-50);">
+        <div style="position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:900px; height:900px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.22), transparent 62%);"></div>
+        <div style="position:relative; display:flex; align-items:center; gap:16px; color:var(--honey);">
+          <svg viewBox="0 0 120 150" width="46" height="58" fill="currentColor"><use href="#ftmark"></use></svg>
+          <div style="font-weight:800; font-size:34px; color:var(--ink-50); letter-spacing:-0.02em;">OpenDiabetic</div>
+        </div>
+        <div style="position:relative; flex:1; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-family:var(--mono); font-size:24px; letter-spacing:0.16em; text-transform:uppercase; color:var(--honey); margin-bottom:34px;">The Loop</div>
+          <div style="font-weight:800; font-size:96px; line-height:1.02; letter-spacing:-0.03em;">The photo you take <span style="color:var(--honey);">Monday</span>…</div>
+          <div style="font-size:40px; color:#B7C2CE; margin-top:38px; line-height:1.45; max-width:22ch;">…shapes the insert you wear Friday, shapes the photo you take next Monday.</div>
+        </div>
+        <div style="position:relative; text-align:center;">
+          <div style="display:inline-flex; align-items:center; gap:14px; background:var(--honey); color:var(--cocoa); font-weight:700; font-size:30px; padding:22px 40px; border-radius:14px;">Start a foot check</div>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <!-- Email header -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Email / newsletter header · 1200×400 (displays ~600 wide @2x)</figcaption>
+    <div style="width:1200px; height:400px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; align-items:center; padding:0 80px; color:var(--ink-50);">
+      <div style="position:absolute; left:-80px; top:-80px; width:520px; height:520px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.22), transparent 66%);"></div>
+      <div style="position:relative; display:flex; align-items:center; gap:28px;">
+        <div style="width:120px; height:120px; border-radius:26px; background:var(--ink-l2); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--honey); flex:none;">
+          <svg viewBox="0 0 120 150" width="60" height="75" fill="currentColor"><use href="#ftmark"></use></svg>
+        </div>
+        <div>
+          <div style="font-weight:800; font-size:46px; letter-spacing:-0.03em;">OpenDiabetic</div>
+          <div style="font-family:var(--mono); font-size:16px; letter-spacing:0.2em; text-transform:uppercase; color:var(--honey); margin-top:10px;">The Digital Foot Lab</div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <!-- ============================================================= -->
+  <!-- GROUP: MOTION -->
+  <!-- ============================================================= -->
+  <div style="width:100%; max-width:2560px; font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#8A7B63; border-bottom:1px solid #CBC1AD; padding-bottom:10px; margin-top:48px;">04 · Motion (live preview — loops · screen-record to export)</div>
+
+  <div style="display:flex; flex-wrap:wrap; gap:56px; align-items:flex-start; justify-content:center; width:100%; max-width:2560px;">
+
+    <!-- 16:9 intro sting -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+      <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Intro sting · 1920×1080 · 16:9 · loops ~5s</figcaption>
+      <div style="width:1920px; height:1080px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; align-items:center; justify-content:center;">
+        <div style="position:absolute; inset:0; margin:auto; width:1100px; height:1100px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.34), transparent 62%); animation:stingGlow 5s ease-in-out infinite;"></div>
+        <div style="position:relative; text-align:center; color:var(--honey);">
+          <svg viewBox="0 0 120 150" width="300" height="375" fill="currentColor" style="animation:stingMark 5s cubic-bezier(0.2,0.8,0.2,1) infinite;"><use href="#ftmark"></use></svg>
+          <div style="font-weight:800; font-size:104px; letter-spacing:-0.03em; color:var(--ink-50); margin-top:20px; animation:stingWord 5s cubic-bezier(0.2,0.8,0.2,1) infinite;">OpenDiabetic</div>
+          <div style="font-family:var(--mono); font-size:28px; letter-spacing:0.26em; text-transform:uppercase; color:#8DA0AE; margin-top:22px; animation:stingTag 5s ease-out infinite;">The Digital Foot Lab</div>
+        </div>
+      </div>
+    </figure>
+
+    <!-- 9:16 sting -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+      <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Intro / outro sting · 1080×1920 · 9:16 · loops ~5s</figcaption>
+      <div style="width:1080px; height:1920px; border-radius:16px; overflow:hidden; background:var(--ink-900); position:relative; display:flex; align-items:center; justify-content:center;">
+        <div style="position:absolute; inset:0; margin:auto; width:900px; height:900px; background:radial-gradient(circle at 50% 50%, rgba(242,180,65,0.34), transparent 62%); animation:stingGlow 5s ease-in-out infinite;"></div>
+        <div style="position:relative; text-align:center; color:var(--honey); padding:0 80px;">
+          <svg viewBox="0 0 120 150" width="260" height="325" fill="currentColor" style="animation:stingMark 5s cubic-bezier(0.2,0.8,0.2,1) infinite;"><use href="#ftmark"></use></svg>
+          <div style="font-weight:800; font-size:82px; letter-spacing:-0.03em; color:var(--ink-50); margin-top:24px; line-height:1.05; animation:stingWord 5s cubic-bezier(0.2,0.8,0.2,1) infinite;">Keep your feet.</div>
+          <div style="font-family:var(--mono); font-size:24px; letter-spacing:0.22em; text-transform:uppercase; color:#8DA0AE; margin-top:20px; animation:stingTag 5s ease-out infinite;">OpenDiabetic · Foot Lab</div>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <!-- Animated lower-third on a 16:9 frame -->
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Animated lower-third · shown on 1920×1080 · slides in, holds, out · loops ~6s</figcaption>
+    <div style="width:1920px; height:1080px; border-radius:16px; overflow:hidden; background:linear-gradient(135deg,#141c26,#0b0f14); position:relative;">
+      <div style="position:absolute; inset:0; background:radial-gradient(700px 500px at 78% 30%, rgba(242,180,65,0.10), transparent 60%);"></div>
+      <div style="position:absolute; left:70px; top:60px; font-family:var(--mono); font-size:20px; color:rgba(255,255,255,0.3); letter-spacing:0.1em;">— sample video frame —</div>
+      <!-- lower third -->
+      <div style="position:absolute; left:90px; bottom:110px; display:flex; align-items:stretch; animation:lt3 6s cubic-bezier(0.2,0.8,0.2,1) infinite;">
+        <div style="width:12px; background:var(--honey); border-radius:6px 0 0 6px; transform-origin:bottom; animation:ltBar 6s cubic-bezier(0.2,0.8,0.2,1) infinite;"></div>
+        <div style="background:rgba(11,15,20,0.86); backdrop-filter:blur(8px); border:1px solid var(--line); border-left:none; border-radius:0 14px 14px 0; padding:26px 40px 26px 30px; display:flex; align-items:center; gap:26px;">
+          <div style="width:78px; height:78px; border-radius:16px; background:var(--honey); display:flex; align-items:center; justify-content:center; color:var(--cocoa); flex:none;">
+            <svg viewBox="0 0 120 150" width="40" height="50" fill="currentColor"><use href="#ftmark"></use></svg>
+          </div>
+          <div>
+            <div style="font-weight:800; font-size:44px; color:var(--ink-50); letter-spacing:-0.02em;">Daily Foot Check</div>
+            <div style="font-family:var(--mono); font-size:20px; letter-spacing:0.14em; text-transform:uppercase; color:var(--honey); margin-top:8px;">Step 1 of 6 · see it every day</div>
+          </div>
+        </div>
+      </div>
+      <!-- persistent corner bug -->
+      <div style="position:absolute; right:70px; top:60px; display:flex; align-items:center; gap:12px; color:var(--honey);">
+        <svg viewBox="0 0 120 150" width="30" height="37" fill="currentColor"><use href="#ftmark"></use></svg>
+        <span style="font-weight:800; font-size:26px; color:var(--ink-50); letter-spacing:-0.02em;">OpenDiabetic</span>
+      </div>
+    </div>
+  </figure>
+
+  <!-- ============================================================= -->
+  <!-- GROUP: SPEC -->
+  <!-- ============================================================= -->
+  <div style="width:100%; max-width:2560px; font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#8A7B63; border-bottom:1px solid #CBC1AD; padding-bottom:10px; margin-top:48px;">05 · Brand core</div>
+
+  <figure style="margin:0; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+    <figcaption style="font-family:var(--mono); font-size:14px; color:#6B5E49;">Color & type spec · 1200×720</figcaption>
+    <div style="width:1200px; height:720px; border-radius:16px; overflow:hidden; background:var(--paper); display:grid; grid-template-columns:1fr 1fr; color:var(--cocoa);">
+      <div style="padding:56px; border-right:1px solid #EADFCB;">
+        <div style="font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#9a8570; margin-bottom:28px;">Palette</div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; align-items:center; gap:16px;"><span style="width:52px; height:52px; border-radius:12px; background:var(--honey);"></span><span style="font-weight:700; font-size:18px;">Honey</span><span style="font-family:var(--mono); font-size:15px; color:#9a8570; margin-left:auto;">#F2B441</span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span style="width:52px; height:52px; border-radius:12px; background:var(--honey-deep);"></span><span style="font-weight:700; font-size:18px;">Honey Deep</span><span style="font-family:var(--mono); font-size:15px; color:#9a8570; margin-left:auto;">#D99A2B</span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span style="width:52px; height:52px; border-radius:12px; background:var(--paper); border:1px solid #EADFCB;"></span><span style="font-weight:700; font-size:18px;">Paper</span><span style="font-family:var(--mono); font-size:15px; color:#9a8570; margin-left:auto;">#FBF7EF</span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span style="width:52px; height:52px; border-radius:12px; background:var(--cocoa);"></span><span style="font-weight:700; font-size:18px;">Cocoa</span><span style="font-family:var(--mono); font-size:15px; color:#9a8570; margin-left:auto;">#2B2118</span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span style="width:52px; height:52px; border-radius:12px; background:var(--ink-900);"></span><span style="font-weight:700; font-size:18px;">Ink 900</span><span style="font-family:var(--mono); font-size:15px; color:#9a8570; margin-left:auto;">#0B0F14</span></div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <span style="display:flex; gap:6px;"><span style="width:22px; height:52px; border-radius:8px; background:var(--green);"></span><span style="width:22px; height:52px; border-radius:8px; background:var(--blue);"></span><span style="width:22px; height:52px; border-radius:8px; background:var(--red);"></span></span>
+            <span style="font-weight:700; font-size:18px;">Status dots</span><span style="font-family:var(--mono); font-size:13px; color:#9a8570; margin-left:auto; text-align:right;">2FB67A · 3D9BE9 · E2524F<br/>dots only — red never for fear</span>
+          </div>
+        </div>
+      </div>
+      <div style="padding:56px;">
+        <div style="font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#9a8570; margin-bottom:28px;">Type</div>
+        <div style="font-weight:800; font-size:64px; letter-spacing:-0.03em; line-height:1;">Figtree</div>
+        <div style="font-size:17px; color:#4A3D30; margin-top:8px;">Warm humanist sans · headings weight 800</div>
+        <div style="display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;">
+          <span style="font-weight:400;">Regular</span><span style="color:#CBC1AD;">·</span>
+          <span style="font-weight:500;">Medium</span><span style="color:#CBC1AD;">·</span>
+          <span style="font-weight:700;">Bold</span><span style="color:#CBC1AD;">·</span>
+          <span style="font-weight:800;">Extrabold</span>
+        </div>
+        <div style="height:1px; background:#EADFCB; margin:36px 0;"></div>
+        <div style="font-family:var(--mono); font-weight:500; font-size:40px;">JetBrains Mono</div>
+        <div style="font-size:17px; color:#4A3D30; margin-top:8px;">Receipts, data, eyebrows, labels</div>
+        <div style="font-family:var(--mono); font-size:18px; color:var(--honey-deep); margin-top:18px;">a receipt for every foot check</div>
+      </div>
+    </div>
+  </figure>
+
+  <div style="width:100%; max-width:1200px; margin-top:40px; font-family:var(--mono); font-size:13px; color:#8A7B63; line-height:1.7; border-top:1px solid #CBC1AD; padding-top:20px;">
+    Guardrails on every asset: calm & warm · privacy-first · no fear / wound imagery · no panic-red (red = status dots only) · never claims to cure, diagnose, or replace a doctor. 🐝 Part of the Swarm &amp; Bee family.
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
