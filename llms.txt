@@ -1,0 +1,26 @@
+# OpenDiabetic — The Digital Foot Lab
+
+> Helping people keep their feet.
+
+OpenDiabetic is a digital foot lab focused on preventing diabetic foot complications.
+It helps people with diabetes catch foot trouble while it is still small — through daily
+monitoring, AI-assisted review, a clinician kept in the loop, personalized offloading,
+made-to-fit inserts manufactured on demand, and continuous foot-health tracking over time.
+
+## What it is
+- A specialized foot-care platform, not a general diabetes app. One thing, done well.
+- The loop: daily foot photo -> AI-assisted review -> clinician confirms -> personalized
+  offloading -> made-to-fit insert -> continuous tracking -> back to the daily photo.
+- Private by default; a person's data stays home; a real clinician confirms uncertain cases.
+
+## What it is not
+- It does not diagnose, treat, cure, or replace a doctor. It is educational monitoring that
+  supports the person and their care team — not a medical device.
+
+## Contact
+- Email: build@opendiabetic.com
+- HQ: Jupiter, Florida
+- Phone: 561.532.7120
+- X: https://x.com/opendiabetics
+- GitHub: https://github.com/SudoSuOps
+- Part of the Swarm & Bee family: https://swarmandbee.com

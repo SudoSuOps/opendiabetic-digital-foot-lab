@@ -1,0 +1,6 @@
+# OpenDiabetic — The Digital Foot Lab
+# AI crawlers welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://opendiabetic.com/sitemap.xml

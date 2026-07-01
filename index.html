@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenDiabetic — helping people keep their feet</title>
+<meta name="description" content="OpenDiabetic is a digital foot lab that catches diabetic foot trouble while it is still small — at home, in your hands, confirmed by your own care team." />
+<link rel="canonical" href="https://opendiabetic.com/" />
+<meta property="og:title" content="OpenDiabetic — helping people keep their feet" />
+<meta property="og:description" content="A digital foot lab that catches the problem while it is still small — at home, in your hands, with your care team." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OpenDiabetic" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@opendiabetics" />
+<meta name="twitter:title" content="OpenDiabetic — helping people keep their feet" />
+<meta name="twitter:description" content="A digital foot lab that catches the problem while it is still small — at home, in your hands, with your care team." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"OpenDiabetic","alternateName":"OpenDiabetic — The Digital Foot Lab","description":"A digital foot lab that helps people with diabetes catch foot problems early — at home, in their hands, confirmed by their care team.","email":"build@opendiabetic.com","telephone":"+1-561-532-7120","address":{"@type":"PostalAddress","addressLocality":"Jupiter","addressRegion":"FL","addressCountry":"US"},"sameAs":["https://x.com/opendiabetics","https://github.com/SudoSuOps","https://swarmandbee.com"]}
+</script>
+<style>
+  :root{
+    --honey:#F2B441; --honey-deep:#D99A2B;
+    --paper:#FBF7EF; --cocoa:#2B2118;
+    --ink-900:#0B0F14; --ink-l1:#0e141b; --ink-l2:#121922; --ink-50:#E8EEF5;
+    --line:#1F2A36;
+    --green:#2FB67A; --red:#E2524F; --blue:#3D9BE9;
+    --sans:'Figtree',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--ink-900);}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+  @keyframes od-glow{ from{opacity:.75; transform:translateY(0);} to{opacity:1; transform:translateY(14px);} }
+  ::selection{background:rgba(242,180,65,0.35); color:var(--cocoa);}
+  /* interaction states (converted from the Claude Design style-hover / style-focus directives) */
+  .skip:focus{left:12px !important; top:12px !important;}
+  .navlink:hover{opacity:1 !important;}
+  .btn-honey:hover{background:var(--honey-deep) !important;}
+  .btn-ghost:hover{border-color:var(--honey) !important; color:var(--honey) !important;}
+  .btn-cocoa:hover{background:#1c150e !important;}
+  .flink:hover{color:var(--honey) !important;}
+</style>
+</head>
+<body>
+
+<div style="font-family:var(--sans); color:var(--ink-50); background:var(--ink-900); -webkit-font-smoothing:antialiased; line-height:1.55; overflow-x:hidden;">
+
+  <a href="#hero" class="skip" style="position:absolute; left:-9999px; top:0; background:var(--honey); color:var(--cocoa); padding:10px 16px; border-radius:10px; font-weight:700; z-index:200;">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky; top:0; z-index:100; background:rgba(11,15,20,0.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line);">
+    <nav aria-label="Primary" style="max-width:1200px; margin:0 auto; padding:14px 22px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <a href="#hero" style="display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--ink-50); font-weight:800; font-size:20px; letter-spacing:-0.02em; margin-right:auto;">
+        <span style="font-size:22px; line-height:1;" role="img" aria-label="foot">🦶</span>
+        <span>OpenDiabetic</span>
+      </a>
+      <ul style="list-style:none; display:flex; gap:26px; margin:0; padding:0; align-items:center; flex-wrap:wrap; font-size:15px;">
+        <li><a href="#loop" class="navlink" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;">The Lab</a></li>
+        <li><a href="#how" class="navlink" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;">How it works</a></li>
+        <li><a href="#who" class="navlink" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;">For clinicians</a></li>
+        <li><a href="#footer" class="navlink" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500;">Contact</a></li>
+      </ul>
+      <a href="#final" class="btn-honey" style="background:var(--honey); color:var(--cocoa); text-decoration:none; font-weight:700; font-size:15px; padding:11px 18px; border-radius:10px; white-space:nowrap;">Start a foot check</a>
+    </nav>
+  </header>
+
+  <main id="hero">
+    <!-- ============ HERO ============ -->
+    <section aria-labelledby="hero-h1" style="position:relative; background:var(--ink-900); overflow:hidden;">
+      <div style="position:absolute; inset:-20% -10% auto -10%; height:820px; pointer-events:none; background:radial-gradient(60% 70% at 50% 12%, rgba(242,180,65,0.30), rgba(242,180,65,0.10) 42%, transparent 70%); filter:blur(6px); z-index:0; animation:od-glow 7s ease-in-out infinite alternate;"></div>
+      <div style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:clamp(72px,11vw,140px) 22px clamp(64px,9vw,120px); text-align:center;">
+        <div style="display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:13px; color:var(--honey); border:1px solid var(--line); background:var(--ink-l1); padding:7px 14px; border-radius:999px; margin-bottom:26px;">
+          <span style="width:8px; height:8px; border-radius:50%; background:var(--green); display:inline-block;"></span>
+          The Digital Foot Lab
+        </div>
+        <h1 id="hero-h1" style="font-weight:800; letter-spacing:-0.03em; line-height:1.02; font-size:clamp(44px,8vw,88px); margin:0 0 22px;">
+          Helping people keep<br />their <span style="color:var(--honey);">feet</span>.
+        </h1>
+        <p style="font-size:clamp(17px,2.2vw,21px); color:#B7C2CE; max-width:640px; margin:0 auto 34px; line-height:1.6;">
+          Every year, diabetes takes feet it never had to. We built a lab that catches the problem while it's still small — at home, in your hands, with your care team.
+        </p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a href="#final" class="btn-honey" style="background:var(--honey); color:var(--cocoa); text-decoration:none; font-weight:700; font-size:16px; padding:15px 26px; border-radius:10px;">Start with a foot check</a>
+          <a href="#loop" class="btn-ghost" style="background:transparent; color:var(--ink-50); text-decoration:none; font-weight:600; font-size:16px; padding:15px 26px; border-radius:10px; border:1px solid var(--line);">See how the Lab works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE STAKES ============ -->
+    <section aria-labelledby="stakes-h" style="background:var(--paper); color:var(--cocoa);">
+      <div style="max-width:840px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
+        <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 18px;">Why it matters</p>
+        <h2 id="stakes-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0 0 26px; max-width:20ch;">
+          When you can't feel it, a small thing becomes a <span style="color:var(--honey-deep);">serious</span> thing.
+        </h2>
+        <div style="font-size:clamp(17px,2vw,20px); line-height:1.65; color:#4A3D30; display:flex; flex-direction:column; gap:18px; max-width:64ch;">
+          <p style="margin:0;">Diabetic neuropathy dulls the nerves in the feet, so a blister, a rub, or a pressure sore can develop without any pain to warn you <span style="color:#9a8570;">[cite]</span>.</p>
+          <p style="margin:0;">Most diabetes-related amputations begin as a foot ulcer — one that, caught earlier, could often have been treated before it turned dangerous <span style="color:#9a8570;">[cite]</span>.</p>
+          <p style="margin:0;">A daily look is the simplest thing that changes the outcome. The trouble is remembering to look, and knowing what you're looking at.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE LOOP ============ -->
+    <section id="loop" aria-labelledby="loop-h" style="background:var(--ink-900); color:var(--ink-50);">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
+        <div style="text-align:center; margin-bottom:clamp(28px,5vw,52px);">
+          <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey); margin:0 0 16px;">The Lab, as a loop</p>
+          <h2 id="loop-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.1; font-size:clamp(28px,4.6vw,46px); margin:0 auto; max-width:16ch;">
+            Six steps that <span style="color:var(--honey);">feed each other</span>.
+          </h2>
+        </div>
+
+        <div style="position:relative; width:min(680px,94vw); aspect-ratio:1/1; margin:0 auto;">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#F2B441" stroke-opacity="0.32" stroke-width="0.7" stroke-dasharray="1.4 2.4" stroke-linecap="round" />
+            <g fill="#F2B441">
+              <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(69,17.1) rotate(30)" />
+              <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(88,50) rotate(90)" />
+              <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(69,82.9) rotate(150)" />
+              <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(31,82.9) rotate(210)" />
+              <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(12,50) rotate(270)" />
+              <path d="M -1.6 -1.6 L 1.6 0 L -1.6 1.6 Z" transform="translate(31,17.1) rotate(330)" />
+            </g>
+          </svg>
+
+          <!-- center caption -->
+          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(240px,42%); text-align:center;">
+            <span style="font-size:clamp(26px,5vw,40px); line-height:1;" role="img" aria-label="footprints">👣</span>
+            <p style="font-size:clamp(12px,1.6vw,15px); line-height:1.5; color:#AEB9C5; margin:12px 0 0;">The photo you take Monday shapes the insert you wear Friday shapes the photo you take next Monday.</p>
+          </div>
+
+          <!-- node 1: top -->
+          <div style="position:absolute; top:12%; left:50%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+            <div style="font-size:26px; line-height:1;" role="img" aria-label="camera">📷</div>
+            <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Daily Foot Monitoring</div>
+            <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">see it every day</div>
+          </div>
+          <!-- node 2: upper right -->
+          <div style="position:absolute; top:31%; left:82.9%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+            <div style="font-size:26px; line-height:1;" role="img" aria-label="robot">🤖</div>
+            <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">AI-Assisted Review</div>
+            <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">nothing slips past</div>
+          </div>
+          <!-- node 3: lower right -->
+          <div style="position:absolute; top:69%; left:82.9%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+            <div style="font-size:26px; line-height:1;" role="img" aria-label="health worker">👨‍⚕️</div>
+            <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Clinician in the Loop</div>
+            <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">an expert confirms</div>
+          </div>
+          <!-- node 4: bottom -->
+          <div style="position:absolute; top:88%; left:50%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+            <div style="font-size:26px; line-height:1;" role="img" aria-label="footprints">👣</div>
+            <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Personalized Offloading</div>
+            <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">take the pressure off</div>
+          </div>
+          <!-- node 5: lower left -->
+          <div style="position:absolute; top:69%; left:17.1%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+            <div style="font-size:26px; line-height:1;" role="img" aria-label="printer">🖨️</div>
+            <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Made-to-Fit Inserts, On Demand</div>
+            <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">the right insert, fast</div>
+          </div>
+          <!-- node 6: upper left -->
+          <div style="position:absolute; top:31%; left:17.1%; transform:translate(-50%,-50%); width:clamp(120px,23%,168px); text-align:center; background:var(--ink-l2); border:1px solid var(--line); border-radius:14px; padding:14px 12px;">
+            <div style="font-size:26px; line-height:1;" role="img" aria-label="chart">📈</div>
+            <div style="font-weight:700; font-size:clamp(13px,1.5vw,15px); margin:8px 0 4px; letter-spacing:-0.01em;">Continuous Foot Health</div>
+            <div style="font-size:clamp(11px,1.3vw,13px); color:#96A2AF;">catch the next one early</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section id="how" aria-labelledby="how-h" style="background:var(--paper); color:var(--cocoa);">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
+        <div style="margin-bottom:clamp(32px,5vw,52px); max-width:32ch;">
+          <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 16px;">How it works</p>
+          <h2 id="how-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0;">Three places it lives.</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
+          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+            <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+              <span style="width:9px; height:9px; border-radius:50%; background:var(--green);"></span>
+              <span style="font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9a8570;">Step 01</span>
+            </div>
+            <h3 style="font-weight:800; font-size:22px; margin:0 0 10px; letter-spacing:-0.01em;">At home</h3>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Take a quick photo of each foot with your phone. No appointment, no travel — just a minute, in your own bathroom light.</p>
+          </div>
+          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+            <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+              <span style="width:9px; height:9px; border-radius:50%; background:var(--green);"></span>
+              <span style="font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9a8570;">Step 02</span>
+            </div>
+            <h3 style="font-weight:800; font-size:22px; margin:0 0 10px; letter-spacing:-0.01em;">In your hands</h3>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">The Lab flags what changed and, when an insert can help, makes one to fit you — printed and shipped, no mould, no wait.</p>
+          </div>
+          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+            <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+              <span style="width:9px; height:9px; border-radius:50%; background:var(--green);"></span>
+              <span style="font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#9a8570;">Step 03</span>
+            </div>
+            <h3 style="font-weight:800; font-size:22px; margin:0 0 10px; letter-spacing:-0.01em;">With your care team</h3>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">A real clinician reviews anything the Lab isn't sure about, so you and your doctor act on the same picture — together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEFENDABLE / TRUST ============ -->
+    <section aria-labelledby="trust-h" style="background:var(--ink-900); color:var(--ink-50);">
+      <div style="max-width:900px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px; text-align:center;">
+        <h2 id="trust-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.14; font-size:clamp(26px,4.2vw,42px); margin:0 auto 18px; max-width:24ch;">
+          A change caught early is a <span style="color:var(--honey);">foot kept</span>. Every step, receipted.
+        </h2>
+        <p style="font-size:17px; color:#AEB9C5; max-width:60ch; margin:0 auto 34px; line-height:1.6;">
+          The Lab keeps a plain record of what it saw, what it suggested, and who confirmed it — <span style="font-family:var(--mono); color:var(--honey);">a receipt for every foot check</span>.
+        </p>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>Private by default</li>
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>Your data stays home</li>
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--green);"></span>A real clinician confirms</li>
+          <li style="display:inline-flex; align-items:center; gap:9px; background:var(--ink-l2); border:1px solid var(--line); border-radius:999px; padding:11px 18px; font-size:15px; font-weight:600;"><span style="width:8px; height:8px; border-radius:50%; background:var(--blue);"></span>It never diagnoses</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WHO IT'S FOR ============ -->
+    <section id="who" aria-labelledby="who-h" style="background:var(--paper); color:var(--cocoa);">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
+        <div style="margin-bottom:clamp(32px,5vw,52px); max-width:34ch;">
+          <p style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey-deep); margin:0 0 16px;">Who it's for</p>
+          <h2 id="who-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.12; font-size:clamp(28px,4.4vw,44px); margin:0;">The person in the chair — and everyone around them.</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
+          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+            <h3 style="font-weight:800; font-size:20px; margin:0 0 10px; letter-spacing:-0.01em;">People living with diabetes</h3>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Especially anyone at higher risk — with neuropathy, a past ulcer, or reduced circulation. A daily check that fits into real life.</p>
+          </div>
+          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+            <h3 style="font-weight:800; font-size:20px; margin:0 0 10px; letter-spacing:-0.01em;">Caregivers</h3>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">A partner, a son or daughter, a nurse. Someone who wants to help watch — and to know when it's time to call the clinic.</p>
+          </div>
+          <div style="background:#fff; border:1px solid #EADFCB; border-radius:10px; padding:28px;">
+            <h3 style="font-weight:800; font-size:20px; margin:0 0 10px; letter-spacing:-0.01em;">The clinic</h3>
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">Podiatry and primary-care teams who want eyes on feet between visits — with a clear record and their clinician kept in the loop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section id="final" aria-labelledby="final-h" style="background:linear-gradient(180deg,var(--honey) 0%,var(--honey-deep) 100%); color:var(--cocoa);">
+      <div style="max-width:840px; margin:0 auto; padding:clamp(64px,9vw,110px) 22px; text-align:center;">
+        <h2 id="final-h" style="font-weight:800; letter-spacing:-0.02em; line-height:1.06; font-size:clamp(34px,6vw,64px); margin:0 0 22px;">Keep your feet.<br />Start today.</h2>
+        <p style="font-size:clamp(17px,2.2vw,20px); color:#5C4A38; max-width:52ch; margin:0 auto 32px; line-height:1.55;">One photo is all it takes to begin. We'll walk you through the rest.</p>
+        <a href="mailto:build@opendiabetic.com" class="btn-cocoa" style="display:inline-block; background:var(--cocoa); color:var(--paper); text-decoration:none; font-weight:700; font-size:17px; padding:16px 32px; border-radius:10px;">Start a foot check</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer" style="background:var(--ink-900); color:var(--ink-50); border-top:1px solid var(--line);">
+    <div style="max-width:1080px; margin:0 auto; padding:clamp(52px,7vw,80px) 22px 40px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:40px 32px;">
+        <div>
+          <div style="display:flex; align-items:baseline; gap:9px; font-weight:800; font-size:19px; letter-spacing:-0.02em; margin-bottom:12px;">
+            <span style="font-size:20px;" role="img" aria-label="foot">🦶</span> OpenDiabetic
+          </div>
+          <p style="margin:0 0 16px; color:#8A96A3; font-size:14px; max-width:34ch; line-height:1.6;">The Digital Foot Lab. We help people with diabetes catch foot trouble while it's still small. We never diagnose or replace your doctor.</p>
+          <p style="margin:0; font-size:14px; color:#AEB9C5; display:inline-flex; align-items:center; gap:8px;">
+            <span style="font-size:15px;" role="img" aria-label="bee">🐝</span> Part of the <span style="color:var(--honey); font-weight:600;">Swarm &amp; Bee</span> family
+          </p>
+        </div>
+
+        <div>
+          <div style="font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6E7C8A; margin-bottom:14px;">Contact</div>
+          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
+            <li><a href="https://x.com/opendiabetics" class="flink" style="color:var(--ink-50); text-decoration:none;">X — @opendiabetics</a></li>
+            <li><a href="mailto:build@opendiabetic.com" class="flink" style="color:var(--ink-50); text-decoration:none;">build@opendiabetic.com</a></li>
+            <li><a href="tel:+15615327120" class="flink" style="color:var(--ink-50); text-decoration:none;">561.532.7120</a></li>
+            <li style="color:#8A96A3;">Jupiter, FL</li>
+            <li><a href="https://github.com/SudoSuOps" class="flink" style="color:var(--ink-50); text-decoration:none;">GitHub — SudoSuOps</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6E7C8A; margin-bottom:14px;">Ecosystem</div>
+          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:14px;">
+            <li><a href="https://swarmandbee.com" class="flink" style="color:var(--ink-50); text-decoration:none;">Swarm &amp; Bee</a></li>
+            <li><a href="#loop" class="flink" style="color:var(--ink-50); text-decoration:none;">The Lab</a></li>
+            <li><a href="#how" class="flink" style="color:var(--ink-50); text-decoration:none;">How it works</a></li>
+            <li><a href="#who" class="flink" style="color:var(--ink-50); text-decoration:none;">For clinicians</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:12px 24px; justify-content:space-between; align-items:center; font-size:13px; color:#6E7C8A;">
+        <span>© 2026 OpenDiabetic. Educational monitoring — not a medical device. It never diagnoses.</span>
+        <span style="font-family:var(--mono);">build@opendiabetic.com · Jupiter, FL</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
