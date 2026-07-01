@@ -107,7 +107,7 @@ export async function onRequestPost({ request, env }) {
       });
     } catch (e) {}
 
-    return new Response(JSON.stringify({ ok: true, v: "branded-1" }), { status: 200, headers: JSON_HEADERS });
+    return new Response(JSON.stringify({ ok: true }), { status: 200, headers: JSON_HEADERS });
   } catch (e) {
     return new Response(JSON.stringify({ ok: false, error: "server_error" }), { status: 500, headers: JSON_HEADERS });
   }
