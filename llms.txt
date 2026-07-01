@@ -24,3 +24,17 @@ made-to-fit inserts manufactured on demand, and continuous foot-health tracking 
 - X: https://x.com/opendiabetics
 - GitHub: https://github.com/SudoSuOps
 - Part of the Swarm & Bee family: https://swarmandbee.com
+
+## Key facts (every figure sourced; adversarially fact-checked)
+- Up to half of people with diabetes develop nerve damage in the feet; it can dull feeling so a sore forms with no pain to warn you. (NIDDK/NIH; Diabetes Care 2023)
+- 19-34% of people with diabetes develop a foot ulcer in their lifetime. (Diabetes Care 2023)
+- Most diabetes-related amputations begin as a foot ulcer that, caught early, is often treatable. (Diabetes Care 2023)
+- About half of diabetic foot ulcers are already infected when first seen; foot infections are the most common diabetes complication requiring hospitalization. (IDSA/IWGDF, Clin Infect Dis 2023)
+- Once infection reaches the bone, amputation odds rise ~4x; with gangrene, ~11x. (PLoS One 2020; odds ratios)
+- Checking foot temperature at home cut new ulcers roughly in half across five clinical trials. (pooled meta-analysis 2022 / IWGDF 2023)
+- Multidisciplinary foot-care teams reduced major amputations in 94% of studies reviewed. (J Vasc Surg 2020)
+- Both Type 1 (autoimmune) and Type 2 are at high risk; after a foot ulcer, Type 1 is not spared. (Diabetes Care 2022)
+- About one-third of the ~$237B spent on U.S. diabetes care is tied to foot complications. (Armstrong et al. 2020, est.; ADA 2017)
+
+## Provenance
+Every clinical figure was adversarially fact-checked (multiple independent verifiers; a claim is dropped unless it survives). Refuted and unverified claims are deliberately excluded. OpenDiabetic never diagnoses; it supports the person and their care team.
