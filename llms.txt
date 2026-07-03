@@ -17,6 +17,13 @@ made-to-fit inserts manufactured on demand, and continuous foot-health tracking 
 - It does not diagnose, treat, cure, or replace a doctor. It is educational monitoring that
   supports the person and their care team — not a medical device.
 
+## Field Guides
+- Field Guide 001 — Daily Foot Check: the 5-minute daily habit that could save your feet.
+  Covers why daily inspection matters, the step-by-step routine, what to look for, how to
+  make it a habit, and when to call your care team. Educational monitoring — never a diagnosis.
+  - Read: https://opendiabetic.com/guides/daily-foot-check.html
+  - Print/PDF: https://opendiabetic.com/guides/daily-foot-check.pdf
+
 ## Contact
 - Email: build@opendiabetic.com
 - HQ: Jupiter, Florida
