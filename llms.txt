@@ -24,6 +24,22 @@ made-to-fit inserts manufactured on demand, and continuous foot-health tracking 
   - Read: https://opendiabetic.com/guides/daily-foot-check.html
   - Print/PDF: https://opendiabetic.com/guides/daily-foot-check.pdf
 
+## Common foot-care questions (Ask Bee — educational, never diagnoses)
+- Why check your feet every day? To catch small changes early, before they become bigger
+  problems. See anything worrying — contact your care team.
+- What to look for? New cuts, blisters, redness; changes in color or warmth. Anything that
+  looks different, tell your care team early.
+- Why does numbness make daily care more important? You may not feel a cut or blister until
+  it grows; daily looking catches what you can't feel.
+- Found a small blister/cut/red spot? Gently clean and lightly cover it. Spreading redness,
+  warmth, or pain — contact your care team.
+- When to call the care team right away? An open sore that isn't healing, sudden swelling,
+  spreading redness, hard-to-ignore pain, difficulty walking, or new numbness.
+- Can't bend to see the soles? Use a floor mirror or ask someone to help; feel gently with
+  your hands. Tell your care team if anything looks different.
+- Does OpenDiabetic diagnose? No. It is educational foot-health monitoring; it never
+  diagnoses or says what is wrong. Concerning changes go to your care team.
+
 ## Contact
 - Email: build@opendiabetic.com
 - HQ: Jupiter, Florida

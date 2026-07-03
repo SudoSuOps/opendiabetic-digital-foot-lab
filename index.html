@@ -85,6 +85,7 @@
         <li><a href="#loop" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" data-dchover="opacity:1;">The Lab</a></li>
         <li><a href="#how" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" data-dchover="opacity:1;">How it works</a></li>
         <li><a href="#who" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" data-dchover="opacity:1;">For clinicians</a></li>
+        <li><a href="#bee" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" data-dchover="opacity:1;">Ask Bee</a></li>
         <li><a href="#guides" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" data-dchover="opacity:1;">Field Guide</a></li>
         <li><a href="#footer" style="color:var(--ink-50); opacity:.82; text-decoration:none; font-weight:500; transition:opacity .2s ease;" data-dchover="opacity:1;">Contact</a></li>
       </ul>
@@ -387,6 +388,42 @@
             <p style="margin:0; font-size:16px; line-height:1.6; color:#4A3D30;">A real clinician reviews anything the Lab isn't sure about, so you and your doctor act on the same picture — together.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ ASK BEE ============ -->
+    <section id="bee" aria-labelledby="bee-h" style="background:var(--ink-900); color:var(--ink-50); border-top:1px solid var(--line);">
+      <style>
+        #bee details{border:1px solid var(--line);border-radius:12px;background:#0e141b;margin-bottom:10px;overflow:hidden;transition:border-color .2s ease;}
+        #bee details[open]{border-color:rgba(242,180,65,0.45);}
+        #bee summary{list-style:none;cursor:pointer;padding:17px 20px;display:flex;align-items:center;gap:13px;font-weight:600;font-size:clamp(15px,1.9vw,17px);color:var(--ink-50);}
+        #bee summary::-webkit-details-marker{display:none;}
+        #bee summary .qd{width:8px;height:8px;border-radius:50%;background:var(--honey);flex:none;box-shadow:0 0 0 4px rgba(242,180,65,0.14);}
+        #bee summary .plus{margin-left:auto;color:var(--honey);font-size:23px;line-height:1;transition:transform .2s ease;flex:none;}
+        #bee details[open] summary .plus{transform:rotate(45deg);}
+        #bee .ans{padding:0 20px 19px 41px;color:#B7C2CE;line-height:1.62;font-size:15px;}
+      </style>
+      <div style="max-width:820px; margin:0 auto; padding:clamp(64px,9vw,112px) 22px;">
+        <p data-reveal style="font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--honey); margin:0 0 18px; display:flex; align-items:center; gap:9px;">
+          <svg viewBox="0 0 120 150" width="13" height="16" fill="currentColor" style="color:var(--honey);" aria-hidden="true"><use href="#ftmark"></use></svg> Ask Bee
+        </p>
+        <h2 id="bee-h" data-reveal data-reveal-delay="80" style="font-weight:800; letter-spacing:-0.02em; line-height:1.14; font-size:clamp(28px,4.4vw,44px); margin:0 0 14px; max-width:22ch;">Foot-care questions, answered calmly.</h2>
+        <p data-reveal data-reveal-delay="140" style="font-size:clamp(16px,1.9vw,19px); line-height:1.6; color:#B7C2CE; max-width:62ch; margin:0 0 36px;">Bee is your foot-care guide. She's educational — she never diagnoses, and she always points you back to your care team. Here are the questions people ask most.</p>
+
+        <div data-reveal data-reveal-delay="180">
+          <details><summary><span class="qd"></span>Why should I check my feet every day?<span class="plus">+</span></summary><div class="ans">Checking your feet daily helps you catch small changes early, before they become bigger problems. It's a simple way to stay safe and comfortable in everyday life. If you ever see something that worries you, reach out to your care team for guidance.</div></details>
+          <details><summary><span class="qd"></span>What am I actually looking for?<span class="plus">+</span></summary><div class="ans">Look closely at the skin and nails for any new cuts, blisters, or redness. Keep an eye on changes in color or warmth, too. If you notice anything that feels different or seems out of place, let your care team know early.</div></details>
+          <details><summary><span class="qd"></span>My feet feel numb — why does that make daily care more important?<span class="plus">+</span></summary><div class="ans">Numbness means you might not feel a cut or blister until it gets larger. Daily care helps keep your skin healthy and protected from injuries you wouldn't otherwise notice. It's a simple way to stay a step ahead.</div></details>
+          <details><summary><span class="qd"></span>I found a small blister, cut, or red spot. What should I do?<span class="plus">+</span></summary><div class="ans">Noticing a small blister or red spot isn't uncommon. If you can, gently clean the area with mild soap and water, then cover it lightly to protect it. If you see spreading redness, warmth, or pain, reach out to your care team for the best next steps.</div></details>
+          <details><summary><span class="qd"></span>When should I call my care team right away?<span class="plus">+</span></summary><div class="ans">Call your care team right away if you notice an open sore that isn't healing, sudden swelling, or redness spreading from a spot. Reach out too if pain is hard to ignore, walking feels difficult, or numbness changes how you move. It's always better to check early than to wait.</div></details>
+          <details><summary><span class="qd"></span>How do I check the bottoms of my feet if bending is hard?<span class="plus">+</span></summary><div class="ans">Use a hand-held mirror on the floor, or ask someone to help you look while you're seated or lying down. Feeling around gently with your hands helps too. Keep checking regularly — and tell your care team early if anything looks different from what you remember.</div></details>
+          <details><summary><span class="qd"></span>Does OpenDiabetic tell me what's wrong with my foot?<span class="plus">+</span></summary><div class="ans">OpenDiabetic helps you learn how to keep your feet safe and healthy. It shares information about foot health, but it does not diagnose or tell you what might be wrong. If you notice something new that worries you, check in with your care team for a look.</div></details>
+        </div>
+
+        <p style="font-family:var(--mono); font-size:12px; color:#7E8B99; letter-spacing:0.03em; margin:26px 0 0; display:flex; align-items:center; gap:9px; flex-wrap:wrap;">
+          <span style="display:inline-flex; align-items:center; gap:7px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--green);"></span>Reviewed against the OpenDiabetic care doctrine</span>
+          <span style="opacity:.6;">· Bee never diagnoses · educational, not medical advice · always involve your care team.</span>
+        </p>
       </div>
     </section>
 
