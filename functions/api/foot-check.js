@@ -93,17 +93,27 @@ export async function onRequestPost({ request, env }) {
     // 2) Warm confirmation to the person (best-effort — never fail the request on this)
     try {
       const confirmInner =
-        '<h1 style="margin:0 0 12px;font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#2B2118;">You’re on the list. 🦶</h1>' +
-        '<p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#4A3D30;">Thank you for reaching out. We’re building <strong>OpenDiabetic — the Digital Foot Lab</strong> to help people with diabetes catch foot trouble while it’s still small: daily monitoring, a clinician in the loop, and made-to-fit care. We’ll be in touch soon.</p>' +
-        '<p style="margin:0 0 4px;font-size:16px;line-height:1.6;color:#4A3D30;">Until then, one thing that changes everything: <strong>look at your feet every day.</strong> A minute a day is the simplest way to keep them.</p>' +
-        '<p style="margin:22px 0 0;font-size:16px;color:#2B2118;font-weight:700;">Keep your feet. 🦶</p>' +
-        '<p style="margin:6px 0 0;font-size:14px;color:#6E7C8A;">— The OpenDiabetic team</p>';
+        '<h1 style="margin:0 0 12px;font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#2B2118;">You just took the first step. 🦶</h1>' +
+        '<p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#4A3D30;">Thanks for starting a foot check. I’m <strong>Donovan</strong> — I built OpenDiabetic because I’m a Type 1 diabetic who lost part of a foot, and I wanted the daily habit that could have caught it early to exist for everyone.</p>' +
+        '<p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#4A3D30;">The most useful thing I can hand you right now is free and takes five minutes a day:</p>' +
+        '<p style="margin:0 0 8px;"><a href="https://opendiabetic.com/guides/daily-foot-check.html" style="display:inline-block;background:#F2B441;color:#2B2118;font-weight:700;font-size:16px;text-decoration:none;padding:13px 26px;border-radius:10px;">Read the Daily Foot Check guide &rarr;</a></p>' +
+        '<p style="margin:0 0 20px;font-size:14px;line-height:1.6;color:#6E7C8A;">Read it, or print the pull-out checklist and tape it by the door.</p>' +
+        '<p style="margin:0 0 18px;font-size:16px;line-height:1.6;color:#4A3D30;">Our foot-check app is in final testing right now — I’ll make sure you’re one of the first invited in.</p>' +
+        '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px;background:#FFF6E6;border:1px solid #F0D89A;border-radius:12px;"><tr><td style="padding:16px 20px;">' +
+        '<p style="margin:0;font-size:16px;line-height:1.6;color:#2B2118;">And I mean this — <strong>you can call me anytime.</strong><br>' +
+        '<a href="tel:+15615327120" style="color:#D99A2B;font-weight:800;font-size:22px;text-decoration:none;">561.532.7120</a><br>' +
+        '<span style="font-size:14px;color:#6E7C8A;">If anything about your feet worries you, I’d rather you reach out than wait.</span></p>' +
+        '</td></tr></table>' +
+        '<p style="margin:0 0 18px;font-size:13.5px;line-height:1.6;color:#6E7C8A;">One promise: this is educational and it never diagnoses. Anything concerning goes to your care team — early calls are never wasted calls.</p>' +
+        '<p style="margin:18px 0 0;font-size:16px;color:#2B2118;font-weight:700;">Keep your feet. 🦶</p>' +
+        '<p style="margin:6px 0 0;font-size:15px;color:#4A3D30;">— Donovan<br><span style="font-size:13px;color:#6E7C8A;">OpenDiabetic · The Digital Foot Lab</span></p>';
       await sendEmail(key, {
-        from: FROM,
+        from: "Donovan at OpenDiabetic <build@opendiabetic.com>",
         to: [email],
-        subject: "You’re on the list — OpenDiabetic 🦶",
-        html: shell("We got your request. Keep your feet.", confirmInner),
-        text: "You're on the list.\n\nThank you for reaching out to OpenDiabetic — the Digital Foot Lab. We'll be in touch soon.\n\nUntil then: look at your feet every day. A minute a day is the simplest way to keep them.\n\nKeep your feet.\n— The OpenDiabetic team",
+        reply_to: LEADS_TO,
+        subject: "Welcome to OpenDiabetic — start here 🦶",
+        html: shell("Your Daily Foot Check guide is inside — and my number.", confirmInner),
+        text: "You just took the first step.\n\nThanks for starting a foot check. I'm Donovan — I built OpenDiabetic because I'm a Type 1 diabetic who lost part of a foot, and I wanted the daily habit that could have caught it early to exist for everyone.\n\nThe most useful thing I can hand you right now is free and takes five minutes a day:\nThe Daily Foot Check guide: https://opendiabetic.com/guides/daily-foot-check.html\n(Read it, or print the pull-out checklist and tape it by the door.)\n\nOur foot-check app is in final testing — I'll make sure you're one of the first invited in.\n\nAnd I mean this: you can call me anytime — 561.532.7120. If anything about your feet worries you, I'd rather you reach out than wait.\n\nThis is educational and it never diagnoses. Anything concerning goes to your care team — early calls are never wasted calls.\n\nKeep your feet.\n— Donovan\nOpenDiabetic · The Digital Foot Lab",
       });
     } catch (e) {}
 
