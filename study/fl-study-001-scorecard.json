@@ -1,0 +1,103 @@
+{
+  "study_id": "FL-STUDY-001",
+  "candidates": {
+    "Gemma 3 27B": "study/c1_gemma3",
+    "MedGemma 27B": "study/c2b_medgemma_clean"
+  },
+  "n_common_images": 35,
+  "reliability": {
+    "Gemma 3 27B": {
+      "n": 35,
+      "clean_first_pass": 35,
+      "repair_used": 0,
+      "hard_fail": 0,
+      "validity_pct": 100.0
+    },
+    "MedGemma 27B": {
+      "n": 35,
+      "clean_first_pass": 35,
+      "repair_used": 0,
+      "hard_fail": 0,
+      "validity_pct": 100.0
+    }
+  },
+  "tier_distribution": {
+    "Gemma 3 27B": {
+      "routine_log": 0,
+      "watch_closely": 0,
+      "contact_clinician": 0,
+      "urgent_care": 35
+    },
+    "MedGemma 27B": {
+      "routine_log": 1,
+      "watch_closely": 0,
+      "contact_clinician": 0,
+      "urgent_care": 34
+    }
+  },
+  "latency_proxy_s_per_image": {
+    "Gemma 3 27B": 21.0,
+    "MedGemma 27B": 21.0
+  },
+  "field_agreement": {
+    "foot": {
+      "agree_pct": 100.0,
+      "kappa": 1.0
+    },
+    "surgery_site_visible": {
+      "agree_pct": 100.0,
+      "kappa": 1.0
+    },
+    "redness": {
+      "agree_pct": 57.1,
+      "kappa": 0.067
+    },
+    "swelling": {
+      "agree_pct": 22.9,
+      "kappa": 0.015
+    },
+    "drainage_or_fluid": {
+      "agree_pct": 57.1,
+      "kappa": 0.34
+    },
+    "discoloration": {
+      "agree_pct": 94.3,
+      "kappa": 0.314
+    },
+    "open_wound_or_skin_break": {
+      "agree_pct": 80.0,
+      "kappa": 0.0
+    },
+    "scab_or_crust": {
+      "agree_pct": 91.4,
+      "kappa": -0.019
+    },
+    "bruising": {
+      "agree_pct": 60.0,
+      "kappa": 0.167
+    },
+    "maceration": {
+      "agree_pct": 71.4,
+      "kappa": 0.448
+    },
+    "pressure_or_friction_signs": {
+      "agree_pct": 0.0,
+      "kappa": 0.0
+    }
+  },
+  "tier_agreement": {
+    "agree_pct": 97.1,
+    "kappa": 0.0
+  },
+  "s2_diagnosis_dosing_flags": {
+    "Gemma 3 27B": [],
+    "MedGemma 27B": []
+  },
+  "wound_positive_labels": "PENDING owner/expert labeling (see PROTOCOL S1)",
+  "note": "Deterministic gates measure reliability/safety/agreement, NOT clinical accuracy. Which model observes better is deferred to the Tier-2 blinded clinician packet.",
+  "chain": {
+    "links": 70,
+    "verify_ok": true,
+    "tamper_demo_breaks_at": 35
+  }
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Study 002 — Does medical specialization help on real foot photos? · OpenDiabetic</title>
+<meta name="description" content="Base Gemma 3 27B vs medical-specialized MedGemma 27B on a real, privacy-controlled diabetic foot-photo series. Same architecture, same prompt, same box — only the weights differ. Deterministic gates, hash-chained receipts, images kept local." />
+<link rel="canonical" href="https://opendiabetic.com/study/foot-medgemma-vs-gemma3" />
+<meta name="theme-color" content="#0B0F14" />
+<meta property="og:title" content="Does medical specialization help on real foot photos?" />
+<meta property="og:description" content="Gemma 3 27B vs MedGemma 27B, evaluated in the open. Deterministic receipts public; the photos never leave the box." />
+<meta property="og:url" content="https://opendiabetic.com/study/foot-medgemma-vs-gemma3" />
+<link rel="icon" href="/brand/bee.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink-900:#0B0F14;--ink-l1:#0e141b;--ink-l2:#121922;--ink-50:#E8EEF5;--line:#1F2A36;
+    --honey:#F2B441;--honey-deep:#D99A2B;--green:#2FB67A;--red:#E2524F;--blue:#3D9BE9;
+    --mut:#7E8B99;--mut2:#96A2AF;
+    --sans:'Figtree',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink-900);color:var(--ink-50);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--honey);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:26px 22px 80px}
+  .top{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line);max-width:1080px;margin:0 auto}
+  .brand{font-weight:800;letter-spacing:-.3px;color:var(--ink-50)}
+  .brand b{color:var(--honey)}
+  .top nav a{color:var(--mut2);font-size:14px;margin-left:20px}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--honey);text-transform:uppercase}
+  h1{font-size:clamp(28px,5vw,44px);letter-spacing:-1px;line-height:1.08;margin:14px 0 8px;text-wrap:balance}
+  h2{font-size:clamp(21px,3.3vw,28px);letter-spacing:-.4px;margin:38px 0 12px}
+  .lead{font-size:18px;color:#C6D0DB}
+  .open{display:inline-flex;align-items:center;gap:7px;background:rgba(242,180,65,.12);border:1px solid rgba(242,180,65,.4);color:var(--honey);border-radius:999px;padding:4px 13px;font-size:13px;font-weight:700}
+  .open::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--honey)}
+  table.sc{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+  table.sc th,table.sc td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+  table.sc th{background:var(--ink-l2);color:var(--mut2);font-weight:600}
+  table.sc td.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .pass{color:var(--green);font-weight:700}
+  .card{background:var(--ink-l1);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
+  .card.honey{border-left:4px solid var(--honey)}
+  blockquote{border-left:3px solid var(--honey);margin:16px 0;padding:8px 16px;color:#C6D0DB;background:var(--ink-l2);border-radius:0 10px 10px 0}
+  code{font-family:var(--mono);background:var(--ink-l2);padding:1px 6px;border-radius:5px;font-size:13px;color:#E3C98B}
+  .mut{color:var(--mut);font-size:14px}
+  footer{border-top:1px solid var(--line);margin-top:40px}
+  .foot{max-width:1080px;margin:0 auto;padding:40px 22px;color:var(--mut);font-size:13.5px}
+  .foot a{color:var(--mut2)}
+</style>
+</head>
+<body>
+<div class="top">
+  <a class="brand" href="/">🐝 Open<b>Diabetic</b></a>
+  <nav><a href="/study">← LocalStudy</a><a href="/guides/daily-foot-check.html">Daily Foot Check</a></nav>
+</div>
+
+<div class="wrap">
+  <p class="eyebrow">Study 002 · Model vs Model · pre-registered</p>
+  <h1>Does medical specialization actually help on real foot photos?</h1>
+  <p style="margin:10px 0 16px"><span class="open">Clinician review open</span></p>
+  <p class="lead">MedGemma is Google's Gemma 3 <b>specialized for medicine</b> — same decoder architecture, retrained on
+   medical images and text. So we ran a clean head-to-head on a real, privacy-controlled foot-photo series:
+   <b>base Gemma 3 27B</b> vs <b>MedGemma 27B</b>. Same prompt, same box, same photos — the <b>only</b> variable is the
+   weights. Protocol pre-registered and hash-frozen <i>before</i> any results; graded by deterministic gates (no AI
+   judging an AI); every exchange hash-chained.</p>
+
+  <div class="card honey"><b>The photos never left the box.</b> An n=1 real foot-photo series reviewed <b>100% locally</b>
+   on owned hardware (2× RTX PRO 6000). Only the <b>deterministic receipts</b> — aggregate numbers, agreement, and the
+   tamper-evident ledger — are published here. No images, no per-photo observations. Private by design, defendable by
+   receipt.</div>
+
+  <h2>The published prior (Google's own benchmarks)</h2>
+  <p>Google reports MedGemma beating base Gemma 3 across medical imaging — but <b>none of those benchmarks are diabetic
+   foot-wound photos</b>. The closest transfer is the dermatology (skin) pre-training. This study is the first check on
+   that out-of-distribution domain.</p>
+  <table class="sc">
+    <tr><th>Benchmark</th><th>Domain</th><th class="num">Gemma 3 27B</th><th class="num">MedGemma 27B</th></tr>
+    <tr><td>US-DermMCQA</td><td>dermatology / skin</td><td class="num">66.9</td><td class="num">71.7</td></tr>
+    <tr><td>EyePACS</td><td>diabetic retinopathy</td><td class="num">20.3</td><td class="num">75.3</td></tr>
+    <tr><td>MIMIC-CXR (F1)</td><td>chest X-ray</td><td class="num">71.7</td><td class="num">90.0</td></tr>
+  </table>
+  <p class="mut">Source: Sellergren et al., <i>MedGemma Technical Report</i>, arXiv:2507.05201 (2025).</p>
+
+  <h2>Deterministic scorecard — 35 photos, identical config</h2>
+  <table class="sc">
+    <tr><th>Metric</th><th>Gemma 3 27B (base)</th><th>MedGemma 27B (specialized)</th></tr>
+    <tr><td>Structured output valid, clean first pass</td><td class="pass">35/35</td><td class="pass">35/35</td></tr>
+    <tr><td>Repairs / hard-fails</td><td>0 / 0</td><td>0 / 0</td></tr>
+    <tr><td>Tiers — urgent / contact / watch / routine</td><td>35 / 0 / 0 / 0</td><td>34 / 0 / 0 / 1</td></tr>
+    <tr><td>No-diagnosis / no-dosing screen</td><td class="pass">0 flags</td><td class="pass">0 flags</td></tr>
+    <tr><td>Latency (wall-time proxy)</td><td>~21 s/img</td><td>~21 s/img</td></tr>
+  </table>
+  <p><b>Per-field inter-model agreement (Cohen's κ)</b> — how often the two models agree on what they see:</p>
+  <table class="sc">
+    <tr><th>Observation</th><th class="num">agree</th><th class="num">κ</th></tr>
+    <tr><td>maceration</td><td class="num">71%</td><td class="num">0.45</td></tr>
+    <tr><td>drainage / fluid</td><td class="num">57%</td><td class="num">0.34</td></tr>
+    <tr><td>discoloration</td><td class="num">94%</td><td class="num">0.31</td></tr>
+    <tr><td>redness</td><td class="num">57%</td><td class="num">0.07</td></tr>
+    <tr><td>swelling</td><td class="num">23%</td><td class="num">0.02</td></tr>
+    <tr><td>pressure / friction</td><td class="num">0%</td><td class="num">0.00</td></tr>
+  </table>
+  <p class="mut">Tamper-evident ledger: 70 links, GENESIS-rooted, verified; flip one byte and the chain breaks at that
+   link. Protocol, prior, scorecard, and ledger are published below for replay.</p>
+
+  <h2>What the receipts say — honestly</h2>
+  <div class="card">
+   <b>1. Reliability is a tie.</b> On this explicit closed-schema prompt, base Gemma 3 held the structure just as well
+   as MedGemma — both 100% valid, zero repairs.<br><br>
+   <b>2. Base Gemma 3 blankets everything "urgent" (35/35); MedGemma discriminates</b> — it pulled out the one clearly
+   mild photo the base model over-escalated.<br><br>
+   <b>3. The two models genuinely see differently</b> — near-zero κ on redness, swelling, and pressure. The
+   specialization changes the <i>observation</i>, not just the wording. This held after removing every confound.
+  </div>
+  <blockquote>The deterministic gates prove <i>behavior</i> — reliable, in-lane, consistent. They <b>cannot</b> say whether
+   MedGemma's finer triage or Gemma 3's blanket caution is clinically <i>correct</i>. There is no ground truth on the
+   box. That verdict belongs to a clinician — which is why this study is marked <b>open</b>.</blockquote>
+
+  <h2>Tier-2 — independent clinical review (open)</h2>
+  <p>The clinical verdict is deferred to a <b>blinded A/B adjudication by a board-certified podiatrist / wound-care
+   clinician</b> — the two models' observations shown side by side with identities hidden. That review is <b>open and
+   unsigned</b>. <b>We never claim a clinical sign-off we don't have.</b></p>
+
+  <h2>Read &amp; reproduce</h2>
+  <p class="mut">Pre-registered protocol (hash-frozen): <a href="fl-study-001-protocol.md">protocol.md</a> ·
+   Published prior: <a href="fl-study-001-prior-evidence.md">prior-evidence.md</a> ·
+   Deterministic scorecard: <a href="fl-study-001-scorecard.json">scorecard.json</a> ·
+   Hash-chained ledger: <a href="fl-study-001-ledger.jsonl">ledger.jsonl</a>.</p>
+  <p class="mut">Not medical advice. A public, <b>PHI-free</b> evaluation — the foot photos and per-photo observations
+   stay on the owner's box and were never published.</p>
+</div>
+
+<footer><div class="foot">
+  <div style="margin-bottom:8px"><b style="color:var(--ink-50)">OpenDiabetic</b> — helping people keep their feet.</div>
+  <a href="mailto:build@opendiabetic.com">build@opendiabetic.com</a> · Jupiter, FL · 561.532.7120 ·
+  <a href="https://x.com/opendiabetics">@opendiabetics</a> · <a href="https://github.com/SudoSuOps">GitHub</a><br>
+  © 2026 Swarm and Bee LLC · DefendableOS · Proof of Execution.
+</div></footer>
+</body>
+</html>
